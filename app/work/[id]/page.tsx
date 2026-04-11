@@ -102,23 +102,22 @@ export default function CaseStudyPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="relative aspect-video lg:aspect-square rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-900"
+              className="relative aspect-video lg:aspect-video rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-900"
             >
-              {project.images && project.images.length > 0 ? (
-                <div className="relative w-full h-full">
-                  <Image src={project.images[0] as any} alt={project.title} fill className="object-cover" />
-                  <div className={cn("absolute inset-0 bg-gradient-to-br opacity-20", project.color)} />
-                </div>
-              ) : (
-                <div className="absolute inset-0 bg-zinc-900/50 backdrop-blur-3xl">
-                  <div className="absolute inset-12 bg-black rounded-2xl border border-zinc-800 shadow-2xl overflow-hidden">
-                    <div className={cn("h-full w-full bg-gradient-to-br opacity-30", project.color)} />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-32 h-32 rounded-full bg-white/5 blur-3xl animate-pulse" />
+                {project.images && project.images.length > 0 ? (
+                  <div className="relative w-full h-full">
+                    <Image src={project.images[0] as any} alt={project.title} fill className="object-cover" />
+                  </div>
+                ) : (
+                  <div className="absolute inset-0 bg-zinc-900/50 backdrop-blur-3xl">
+                    <div className="absolute inset-12 bg-black rounded-2xl border border-zinc-800 shadow-2xl overflow-hidden">
+                      <div className={cn("h-full w-full bg-gradient-to-br opacity-30", project.color)} />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-32 h-32 rounded-full bg-white/5 blur-3xl animate-pulse" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
             </motion.div>
           </div>
 
@@ -155,15 +154,14 @@ export default function CaseStudyPage() {
           >
             {project.images && project.images.length > 1 ? (
               project.images.slice(1).map((img, idx) => (
-                <div key={idx} className="h-64 md:h-80 bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden relative group">
+                <div key={idx} className="h-48 md:h-64 bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden relative group">
                   <Image src={img as any} alt={`${project.title} ${idx + 2}`} fill className="object-cover" />
-                  <div className={cn("absolute inset-0 bg-gradient-to-tr opacity-10 group-hover:opacity-20 transition-opacity", project.color)} />
                 </div>
               ))
             ) : (
               // Fallback placeholders (keep two placeholders to match grid)
               [0,1].map((i) => (
-                <div key={i} className="h-64 md:h-80 bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden relative group">
+                <div key={i} className="h-48 md:h-64 bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden relative group">
                   <div className={cn("absolute inset-0 bg-gradient-to-tr opacity-10 group-hover:opacity-20 transition-opacity", project.color)} />
                   <div className="absolute inset-0 flex items-center justify-center text-zinc-800 font-mono text-xs uppercase tracking-widest">
                     Interface Detail {i + 1}

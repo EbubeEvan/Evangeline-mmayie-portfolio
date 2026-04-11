@@ -33,7 +33,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
       >
         {/* Device Frame Mockup */}
         <div className={cn(
-          "relative bg-zinc-900/50 overflow-hidden h-64 md:h-80"
+          "relative bg-zinc-900/50 overflow-hidden h-48 md:h-56"
         )}>
           <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 to-black" />
           
@@ -43,7 +43,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
               {project.images && project.images.length > 0 ? (
                 <Image src={project.images[0] as any} alt={project.title} fill className="object-cover" />
               ) : (
-                // Fallback simulated UI if no image present
+                // Fallback simulated UI if no image present (uses project color)
                 <>
                   <div className={cn("h-full w-full bg-gradient-to-br opacity-20", project.color)} />
                   <div className="p-4 space-y-3 absolute inset-0">
