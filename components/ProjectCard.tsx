@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useMotionValue, useTransform } from 'motion/react';
 import { cn } from '@/lib/utils';
 import { Project } from '@/lib/types';
@@ -36,32 +37,39 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
         )}>
           <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 to-black" />
           
-          {/* Simulated UI Content */}
+          {/* Simulated UI Content or Project Image */}
           <div className="absolute inset-4 bg-black rounded-lg overflow-hidden border border-zinc-800">
-            <div className={cn("h-full w-full bg-gradient-to-br opacity-20", project.color)} />
-            
-            {/* Animated UI Elements */}
-            <div className="p-4 space-y-3">
-              <motion.div 
-                className="h-2 bg-zinc-800 rounded-full w-3/4"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <motion.div 
-                className="h-2 bg-zinc-800 rounded-full w-1/2"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
-              />
-              <div className="flex gap-2 mt-4">
-                {[1, 2, 3].map((i) => (
-                  <motion.div
-                    key={i}
-                    className={cn("w-20 h-20 rounded-lg bg-zinc-800/50", project.color.replace('from-', 'bg-').split(' ')[0])}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  />
-                ))}
-              </div>
+            <div className="relative h-full w-full">
+              {project.images && project.images.length > 0 ? (
+                <Image src={project.images[0] as any} alt={project.title} fill className="object-cover" />
+              ) : (
+                // Fallback simulated UI if no image present
+                <>
+                  <div className={cn("h-full w-full bg-gradient-to-br opacity-20", project.color)} />
+                  <div className="p-4 space-y-3 absolute inset-0">
+                    <motion.div 
+                      className="h-2 bg-zinc-800 rounded-full w-3/4"
+                      animate={{ opacity: [0.5, 1, 0.5] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    />
+                    <motion.div 
+                      className="h-2 bg-zinc-800 rounded-full w-1/2"
+                      animate={{ opacity: [0.5, 1, 0.5] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
+                    />
+                    <div className="flex gap-2 mt-4">
+                      {[1, 2, 3].map((i) => (
+                        <motion.div
+                          key={i}
+                          className={cn("w-20 h-20 rounded-lg bg-zinc-800/50", project.color.replace('from-', 'bg-').split(' ')[0])}
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.2 }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 

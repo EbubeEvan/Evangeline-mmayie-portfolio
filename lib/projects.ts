@@ -1,68 +1,157 @@
 import { Project } from './types';
 
+import aiMain from '@/assets/projects/ai-expert-system/main.png';
+import aiDiagram from '@/assets/projects/ai-expert-system/diagram.png';
+import aiToolCall from '@/assets/projects/ai-expert-system/tool-call.png';
+
+import beautyMain from '@/assets/projects/beauty-care-ai/main.png';
+
+import laferlaSiteMain from '@/assets/projects/laferla-website/main.png';
+import laferlaSiteAbout from '@/assets/projects/laferla-website/about.png';
+import laferlaSiteTravel from '@/assets/projects/laferla-website/travel.png';
+
+import laferlaMobileMain from '@/assets/projects/laferla-mobile-app/main.png';
+import laferlaMobileHand from '@/assets/projects/laferla-mobile-app/hand-held.png';
+import laferlaMobilePowerful from '@/assets/projects/laferla-mobile-app/powerful-app.png';
+
+import laferlaWebMain from '@/assets/projects/laferla-web-app/main.png';
+import laferlaWebBuy from '@/assets/projects/laferla-web-app/buy-insurance.png';
+import laferlaWebProfile from '@/assets/projects/laferla-web-app/profile.png';
+
+import lyfterBanner from '@/assets/projects/lyfter/lyfter_advertisement_banner.png';
+import lyfterDetails from '@/assets/projects/lyfter/ride-details.jpg';
+import lyfterSelect from '@/assets/projects/lyfter/ride-select.jpg';
+
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Lumina Social',
-    category: 'Mobile',
+    title: 'AI Expert System',
+    category: 'Web',
     year: '2024',
-    description: 'Cross-platform social app with gesture-driven navigation and 60fps shared element transitions.',
-    tech: ['React Native', 'Reanimated', 'TypeScript', 'Supabase'],
-    metrics: '60fps • 4.9★ App Store',
-    color: 'from-violet-500 to-fuchsia-500',
+    description:
+      'Most AI chatbots can only talk. The AI Expert System is an autonomous agent that acts — completing dev tasks like setting up GitHub repos, writing code, and deploying full-stack projects through a real-time multimodal chat interface.',
+    tech: ['React', 'Node.js', 'OpenAI', 'WebSockets'],
+    metrics: 'Autonomous • Real-time multimodal',
+    color: 'from-violet-500 to-indigo-500',
     featured: true,
-    challenge: 'The primary challenge was maintaining a consistent 60fps performance while handling complex shared element transitions and heavy gesture interactions across both iOS and Android.',
-    solution: 'We implemented a custom gesture handling system using Reanimated 3 and Gesture Handler, offloading all animation logic to the UI thread. We also optimized image loading with a custom caching layer.',
-    outcome: 'The app launched to critical acclaim, maintaining a 4.9-star rating and handling over 100k daily active users without performance degradation.',
-    fullDescription: 'Lumina Social is a next-generation social platform focused on high-fidelity interactions. Built from the ground up with performance in mind, it pushes the boundaries of what is possible with cross-platform mobile development.'
+    previewUrl: 'https://playground.hyperlambda.dev/',
+    challenge:
+      'Building an agent that could autonomously execute multi-step dev workflows — not just respond — while keeping the interface responsive during long-running tasks.',
+    solution:
+      'Designed an event-driven pipeline with real-time WebSocket feedback, allowing the agent to stream progress updates and intermediate outputs back to the user as each step completed.',
+    outcome:
+      'Delivered a working autonomous dev agent capable of scaffolding, writing, and deploying full-stack projects end-to-end through a single chat interface.',
+    fullDescription:
+      'The AI Expert System goes beyond conversational AI — it is an autonomous agent that executes real development tasks. Users interact through a multimodal chat interface while the agent handles everything from repository setup to deployment.',
+    images: [aiMain, aiDiagram, aiToolCall],
   },
   {
     id: '2',
-    title: 'Aether Design System',
-    category: 'Design System',
+    title: 'Laferla Website',
+    category: 'Web',
     year: '2024',
-    description: 'Comprehensive component library powering 12 products across web and mobile platforms.',
-    tech: ['React', 'Storybook', 'Figma API', 'Tailwind'],
-    metrics: '200+ Components • 99% Coverage',
-    color: 'from-cyan-500 to-blue-500',
-    challenge: 'Scaling a design system across multiple product teams while ensuring strict visual consistency and developer autonomy.',
-    solution: 'Created a multi-layered token system and a robust component library with automated visual regression testing. We also built a custom Figma plugin to sync design tokens directly to the codebase.',
-    outcome: 'Developer velocity increased by 40%, and visual bugs related to inconsistent components were reduced by 95% across all 12 products.',
-    fullDescription: 'Aether is more than just a component library; it is a shared language for design and engineering. It provides the foundation for all digital products at Aether Systems.'
+    description:
+      "Malta's leading insurance provider needed a web presence that matched their scale. Built and optimised for performance and SEO, the site drives organic acquisition and serves as the primary touchpoint for new customers.",
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'SEO'],
+    metrics: 'Core Web Vitals • SEO optimised',
+    color: 'from-blue-500 to-cyan-500',
+    featured: true,
+    previewUrl: 'https://laferla.com.mt/',
+    challenge:
+      "Translating a market-leading brand into a high-performance web presence that could rank competitively and convert organic traffic at scale.",
+    solution:
+      'Built with Next.js for server-side rendering and fine-tuned for Core Web Vitals, with a structured content architecture designed for strong search indexing.',
+    outcome:
+      'Delivered an SEO-optimised site that serves as the primary digital acquisition channel for Malta\'s leading insurance provider.',
+    fullDescription:
+      'Laferla Insurance is Malta\'s most recognised insurance brand. This project delivered a performant, SEO-driven web presence designed to convert organic traffic and scale with the business.',
+    images: [laferlaSiteMain, laferlaSiteAbout, laferlaSiteTravel],
   },
   {
     id: '3',
-    title: 'Monolith Dashboard',
-    category: 'Web',
+    title: 'Laferla Insurance Mobile App',
+    category: 'Mobile',
     year: '2023',
-    description: 'Real-time analytics interface with WebGL data visualizations and sub-100ms interactions.',
-    tech: ['Next.js', 'Three.js', 'Framer Motion', 'PostgreSQL'],
-    metrics: '100ms response • 99 Lighthouse',
-    color: 'from-amber-500 to-orange-500',
-    featured: true,
-    challenge: 'Visualizing massive datasets in real-time without blocking the main thread or sacrificing visual quality.',
-    solution: 'Utilized Three.js for hardware-accelerated rendering and Web Workers for data processing. Implemented a custom shader system for fluid, high-performance visualizations.',
-    outcome: 'Achieved sub-100ms interaction latency even with datasets exceeding 1 million points, with a perfect 100 Lighthouse performance score.',
-    fullDescription: 'Monolith is a high-performance analytics dashboard designed for enterprise-scale data. It combines cutting-edge WebGL technology with a refined user experience.'
+    description:
+      "Managing insurance shouldn't require a trip to the office. This app lets Laferla customers purchase policies, track claims, and manage their coverage entirely from their phone.",
+    tech: ['React Native', 'TypeScript', 'REST APIs', 'Push Notifications'],
+    metrics: 'Cross-platform • Policy & claims management',
+    color: 'from-sky-500 to-blue-600',
+    previewUrl: 'https://play.google.com/store/apps/details?id=com.laferla.laferla',
+    challenge:
+      'Bringing complex insurance workflows — policy purchase, claims tracking, document management — into a mobile experience that felt simple and trustworthy.',
+    solution:
+      'Designed a streamlined mobile UX that broke multi-step insurance flows into clear, guided steps, with real-time status updates via push notifications.',
+    outcome:
+      'Customers can now manage their entire insurance lifecycle from their phone, reducing branch visits and support overhead.',
+    fullDescription:
+      'The Laferla mobile app puts full insurance management in customers\' hands — from purchasing new policies to tracking open claims — available on both iOS and Android.',
+    images: [laferlaMobileMain, laferlaMobileHand, laferlaMobilePowerful],
   },
   {
     id: '4',
-    title: 'Kinetic Typography',
-    category: 'Experiment',
+    title: 'Laferla Insurance Web App',
+    category: 'Web',
     year: '2023',
-    description: 'Interactive typographic playground using variable fonts and scroll-driven animations.',
-    tech: ['GSAP', 'Variable Fonts', 'Canvas API'],
-    metrics: 'WebGL • 60fps',
-    color: 'from-emerald-500 to-teal-500'
+    description:
+      'A self-service portal that removes the middleman — giving Laferla customers full control over their policies, renewals, and claims without needing to call or visit a branch.',
+    tech: ['React', 'TypeScript', 'REST APIs', 'Auth'],
+    metrics: 'Self-service • Reduced support load',
+    color: 'from-teal-500 to-cyan-500',
+    previewUrl: 'https://app.laferla.com.mt/',
+    challenge:
+      'Reducing dependency on branch staff and phone support by making core insurance operations fully self-serviceable online.',
+    solution:
+      'Built a secure, role-based customer portal with intuitive flows for policy management, renewals, and claims — accessible without agent involvement.',
+    outcome:
+      'Customers gained 24/7 self-service access to their insurance accounts, cutting inbound support contacts and freeing up agent capacity.',
+    fullDescription:
+      'The Laferla web app is a full-featured self-service portal for existing customers. It handles the complete post-purchase lifecycle — renewals, claims, and policy updates — without requiring branch or phone interactions.',
+    images: [laferlaWebMain, laferlaWebBuy, laferlaWebProfile],
   },
   {
     id: '5',
-    title: 'Prism Wallet',
+    title: 'Lyfter',
     category: 'Mobile',
     year: '2023',
-    description: 'Crypto wallet with biometric auth and hardware-backed key management.',
-    tech: ['React Native', 'Swift', 'Rust', 'Web3'],
-    metrics: 'Bank-grade security • 50k users',
-    color: 'from-rose-500 to-pink-500'
-  }
+    description:
+      'Booking a ride should be instant and transparent. Lyfter connects passengers with drivers in real-time, with live route tracking and upfront distance calculations built in.',
+    tech: ['React Native', 'Expo', 'Maps API', 'Real-time'],
+    metrics: 'Live tracking • Real-time matching',
+    color: 'from-amber-500 to-orange-500',
+    gitUrl: 'https://github.com/EbubeEvan/Lyfter',
+    previewUrl: 'https://expo.dev/artifacts/eas/wPs2Hmyg6gRfuqbrDCME3E.apk',
+    challenge:
+      'Implementing real-time driver-passenger matching with live map tracking on a cross-platform mobile stack without sacrificing performance.',
+    solution:
+      'Used WebSocket-based location syncing and integrated a maps SDK for live route rendering, with upfront fare estimation calculated from distance data.',
+    outcome:
+      'A fully functional ride-hailing prototype with real-time tracking, instant booking, and transparent distance-based pricing.',
+    fullDescription:
+      'Lyfter is a ride-hailing mobile app built with React Native and Expo. It supports real-time driver matching, live GPS route tracking, and upfront distance-based fare calculations.',
+    images: [lyfterBanner, lyfterDetails, lyfterSelect],
+  },
+  {
+    id: '6',
+    title: 'BeautyCare AI',
+    category: 'Web',
+    year: '2024',
+    description:
+      'Generic beauty advice ignores your skin, your tone, your needs. BeautyCare AI delivers personalised consultations by analysing both text and images — like having a beauty specialist available 24/7.',
+    tech: ['Next.js', 'OpenAI', 'TypeScript', 'Tailwind CSS'],
+    metrics: 'Multimodal AI • Personalised advice',
+    color: 'from-rose-500 to-pink-500',
+    featured: true,
+    gitUrl: 'https://github.com/EbubeEvan/Beauty-Care-AI',
+    previewUrl: 'https://beauty-care-ai.vercel.app/',
+    challenge:
+      'Moving beyond generic AI responses to deliver beauty advice that actually accounts for individual skin tone, type, and specific concerns from real images.',
+    solution:
+      'Integrated a multimodal AI pipeline capable of analysing user-submitted images alongside text inputs to generate contextual, personalised product and routine recommendations.',
+    outcome:
+      'Delivered an AI beauty consultant that responds to what it actually sees — giving personalised advice that generic chatbots cannot replicate.',
+    fullDescription:
+      'BeautyCare AI is a multimodal beauty consultation tool powered by AI. It analyses both images and text to understand a user\'s unique skin profile and deliver tailored advice, available on demand.',
+    images: [beautyMain],
+  },
 ];

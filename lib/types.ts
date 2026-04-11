@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export type ProjectCategory = 'Web' | 'Mobile' | 'Design System' | 'Experiment';
 
 export interface Project {
@@ -14,6 +16,9 @@ export interface Project {
   solution?: string;
   outcome?: string;
   fullDescription?: string;
+  previewUrl?: string;
+  gitUrl?: string;
+  images?: (string | StaticImageData)[];
 }
 
 export interface Service {
@@ -31,5 +36,5 @@ export interface Review {
   role: string;
   company: string;
   content: string;
-  avatar?: string;
+  avatar?: string | StaticImageData;
 }
