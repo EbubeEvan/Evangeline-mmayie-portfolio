@@ -28,7 +28,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
         onMouseMove={handleMouseMove}
         onMouseLeave={() => { x.set(0); y.set(0); }}
         className={cn(
-          "group relative bg-zinc-950 border border-zinc-900 hover:border-zinc-700 transition-all duration-500 overflow-hidden cursor-pointer h-full"
+          "group relative flex flex-col bg-zinc-950 border border-zinc-900 hover:border-zinc-700 transition-all duration-500 overflow-hidden cursor-pointer h-full"
         )}
       >
         {/* Device Frame Mockup */}
@@ -82,13 +82,13 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
         </div>
 
         {/* Card Content */}
-        <div className="p-6 space-y-4">
+        <div className="p-6 space-y-4 flex flex-col justify-between flex-grow">
           <div className="flex items-start justify-between">
             <div>
               <h3 className="text-xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-zinc-400 transition-all">
                 {project.title}
               </h3>
-              <p className="text-sm text-zinc-500">{project.category} • {project.year}</p>
+              <p className="text-sm text-zinc-500">{Array.isArray(project.category) ? project.category.join(' • ') : project.category}</p>
             </div>
           </div>
           

@@ -75,12 +75,10 @@ export const Contact = () => {
 
         {/* Footer */}
         <div className="mt-32 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-600 text-sm">
-          <p>© 2024 Evangeline Mmayie. All rights reserved.</p>
+          <p>© 2026 Evangeline Mmayie. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Twitter</a>
-            <a href="#" className="hover:text-white transition-colors">GitHub</a>
-            <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-            <a href="#" className="hover:text-white transition-colors">Dribbble</a>
+            <a href="https://github.com/EbubeEvan" className="hover:text-white transition-colors">GitHub</a>
+            <a href="https://www.linkedin.com/in/evangeline-mmayie/" className="hover:text-white transition-colors">LinkedIn</a>
           </div>
         </div>
       </div>

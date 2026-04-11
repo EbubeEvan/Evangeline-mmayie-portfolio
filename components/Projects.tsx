@@ -8,7 +8,7 @@ import { PROJECTS } from '@/lib/constants';
 import { ProjectCard } from './ProjectCard';
 
 export const Projects = () => {
-  const [filter, setFilter] = useState<ProjectCategory | 'All'>('All');
+  const [filter, setFilter] = useState<string | 'All'>('All');
   const [isDesktop, setIsDesktop] = useState(false);
   const targetRef = useRef<HTMLDivElement>(null);
 
@@ -19,9 +19,13 @@ export const Projects = () => {
     return () => window.removeEventListener('resize', checkIsDesktop);
   }, []);
 
-  const filtered = useMemo(() => 
-    filter === 'All' ? PROJECTS : PROJECTS.filter(p => p.category === filter),
-  [filter]);
+  const filtered = useMemo(() => {
+    if (filter === 'All') return PROJECTS;
+    return PROJECTS.filter(p => {
+      if (Array.isArray(p.category)) return p.category.includes(filter as ProjectCategory);
+      return p.category === filter;
+    });
+  }, [filter]);
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -52,7 +56,7 @@ export const Projects = () => {
             </div>
             
             <div className="flex gap-2">
-              {['All', 'Web', 'Mobile', 'Design System', 'Experiment'].map((cat) => (
+              {['All', 'Web', 'Mobile', 'AI'].map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setFilter(cat as any)}

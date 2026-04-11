@@ -26,8 +26,7 @@ export const PROJECTS: Project[] = [
   {
     id: '1',
     title: 'AI Expert System',
-    category: 'Web',
-    year: '2024',
+    category: ['Web', 'AI'],
     description:
       'Most AI chatbots can only talk. The AI Expert System is an autonomous agent that acts — completing dev tasks like setting up GitHub repos, writing code, and deploying full-stack projects through a real-time multimodal chat interface.',
     tech: ['React', 'Node.js', 'OpenAI', 'WebSockets'],
@@ -49,8 +48,7 @@ export const PROJECTS: Project[] = [
   {
     id: '2',
     title: 'Laferla Website',
-    category: 'Web',
-    year: '2024',
+    category: ['Web'],
     description:
       "Malta's leading insurance provider needed a web presence that matched their scale. Built and optimised for performance and SEO, the site drives organic acquisition and serves as the primary touchpoint for new customers.",
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'SEO'],
@@ -72,8 +70,7 @@ export const PROJECTS: Project[] = [
   {
     id: '3',
     title: 'Laferla Insurance Mobile App',
-    category: 'Mobile',
-    year: '2023',
+    category: ['Mobile'],
     description:
       "Managing insurance shouldn't require a trip to the office. This app lets Laferla customers purchase policies, track claims, and manage their coverage entirely from their phone.",
     tech: ['React Native', 'TypeScript', 'REST APIs', 'Push Notifications'],
@@ -94,8 +91,7 @@ export const PROJECTS: Project[] = [
   {
     id: '4',
     title: 'Laferla Insurance Web App',
-    category: 'Web',
-    year: '2023',
+    category: ['Web'],
     description:
       'A self-service portal that removes the middleman — giving Laferla customers full control over their policies, renewals, and claims without needing to call or visit a branch.',
     tech: ['React', 'TypeScript', 'REST APIs', 'Auth'],
@@ -110,14 +106,13 @@ export const PROJECTS: Project[] = [
     outcome:
       'Customers gained 24/7 self-service access to their insurance accounts, cutting inbound support contacts and freeing up agent capacity.',
     fullDescription:
-      'The Laferla web app is a full-featured self-service portal for existing customers. It handles the complete post-purchase lifecycle — renewals, claims, and policy updates — without requiring branch or phone interactions.',
+      'The Laferla web app is a full-featured self-service portal for existing customers. It handles the complete purchase and post-purchase lifecycle — renewals, claims, and policy updates — without requiring branch or phone interactions.',
     images: [laferlaWebMain, laferlaWebBuy, laferlaWebProfile],
   },
   {
     id: '5',
     title: 'Lyfter',
-    category: 'Mobile',
-    year: '2023',
+    category: ['Mobile'],
     description:
       'Booking a ride should be instant and transparent. Lyfter connects passengers with drivers in real-time, with live route tracking and upfront distance calculations built in.',
     tech: ['React Native', 'Expo', 'Maps API', 'Real-time'],
@@ -138,11 +133,10 @@ export const PROJECTS: Project[] = [
   {
     id: '6',
     title: 'BeautyCare AI',
-    category: 'Web',
-    year: '2024',
+    category: ['Web', 'AI'],
     description:
       'Generic beauty advice ignores your skin, your tone, your needs. BeautyCare AI delivers personalised consultations by analysing both text and images — like having a beauty specialist available 24/7.',
-    tech: ['Next.js', 'OpenAI', 'TypeScript', 'Tailwind CSS'],
+    tech: ['Next.js', 'Gemini', 'TypeScript', 'Tailwind CSS'],
     metrics: 'Multimodal AI • Personalised advice',
     color: 'from-rose-500 to-pink-500',
     featured: true,

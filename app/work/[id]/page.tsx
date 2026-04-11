@@ -1,10 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, CheckCircle2, Eye, X } from 'lucide-react';
 import { PROJECTS } from '@/lib/constants';
 import { Navigation } from '@/components/Navigation';
 import { Contact } from '@/components/Contact';
@@ -14,6 +14,10 @@ export default function CaseStudyPage() {
   const params = useParams();
   const router = useRouter();
   const project = PROJECTS.find((p) => p.id === params.id);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalSrc, setModalSrc] = useState<string | null>(null);
+  const [overlayIndex, setOverlayIndex] = useState<number | null>(null);
 
   if (!project) {
     return (
@@ -56,11 +60,14 @@ export default function CaseStudyPage() {
               transition={{ delay: 0.1 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <span className="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full text-xs font-medium text-zinc-400">
-                  {project.category}
-                </span>
-                <span className="text-zinc-600">•</span>
-                <span className="text-zinc-500 text-sm">{project.year}</span>
+                <div className="flex items-center gap-2">
+                  {(Array.isArray(project.category) ? project.category : [project.category]).map((c, idx, arr) => (
+                    <React.Fragment key={c}>
+                      <span className="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full text-xs font-medium text-zinc-400">{c}</span>
+                      {idx < arr.length - 1 && <span className="text-zinc-600">•</span>}
+                    </React.Fragment>
+                  ))}
+                </div>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
                 {project.title}
@@ -150,18 +157,32 @@ export default function CaseStudyPage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32"
+            className="flex flex-col md:flex-row gap-12 mb-32"
           >
             {project.images && project.images.length > 1 ? (
               project.images.slice(1).map((img, idx) => (
-                <div key={idx} className="relative aspect-video bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden group">
+                <div
+                  key={idx}
+                  className="relative aspect-video h-36 md:h-44 lg:h-56 rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-900 group cursor-pointer"
+                >
                   <Image src={img} alt={`${project.title} ${idx + 2}`} fill className="object-cover" />
+
+                  <div className={`absolute inset-0 flex items-center justify-center transition-opacity ${overlayIndex === idx ? 'bg-black/40 opacity-100' : 'bg-black/0 opacity-0 group-hover:opacity-100 group-hover:bg-black/30'}`} onMouseEnter={() => setOverlayIndex(idx)} onMouseLeave={() => setOverlayIndex(null)}>
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); setModalSrc(img as any); setModalOpen(true); }}
+                      className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                      aria-label={`View ${project.title} image ${idx + 2}`}
+                    >
+                      <Eye className="w-6 h-6 text-white" />
+                    </button>
+                  </div>
                 </div>
               ))
             ) : (
               // Fallback placeholders (keep two placeholders to match grid)
               [0,1].map((i) => (
-                <div key={i} className="relative aspect-video bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden group">
+                <div key={i} className="relative aspect-video h-36 md:h-44 lg:h-56 rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-900 group">
                   <div className={cn("absolute inset-0 bg-gradient-to-tr opacity-10 group-hover:opacity-20 transition-opacity", project.color)} />
                   <div className="absolute inset-0 flex items-center justify-center text-zinc-800 font-mono text-xs uppercase tracking-widest">
                     Interface Detail {i + 1}
@@ -170,6 +191,26 @@ export default function CaseStudyPage() {
               ))
             )}
           </motion.div>
+
+          {/* Image modal */}
+          {modalOpen && modalSrc && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={() => { setModalOpen(false); setOverlayIndex(null); }}>
+              <div className="relative max-w-[90vw] max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
+                <button
+                  type="button"
+                  onClick={() => { setModalOpen(false); setOverlayIndex(null); }}
+                  className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 hover:bg-black/60"
+                  aria-label="Close image viewer"
+                >
+                  <X className="w-5 h-5 text-white" />
+                </button>
+
+                <div className="w-full h-full flex items-center justify-center">
+                  <Image src={modalSrc as any} alt="Expanded project image" className="object-contain" style={{ maxHeight: '90vh', maxWidth: '90vw' }} />
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* CTA Section */}
           <motion.div

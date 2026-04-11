@@ -1,12 +1,12 @@
 import { StaticImageData } from "next/image";
 
-export type ProjectCategory = 'Web' | 'Mobile' | 'Design System' | 'Experiment';
+export type ProjectCategory = 'Web' | 'Mobile' | 'AI';
 
 export interface Project {
   id: string;
   title: string;
-  category: ProjectCategory;
-  year: string;
+  // Allow a single category or multiple categories for sorting and filtering
+  category: ProjectCategory | ProjectCategory[];
   description: string;
   tech: string[];
   metrics: string;
