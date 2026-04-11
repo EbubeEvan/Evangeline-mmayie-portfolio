@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { motion } from 'motion/react';
 import { Quote } from 'lucide-react';
 import { REVIEWS } from '@/lib/constants';
@@ -22,15 +21,17 @@ export const Reviews = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="relative p-8 bg-zinc-950 border border-zinc-900 hover:border-zinc-700 transition-all duration-300 group"
+              className="relative p-8 bg-zinc-950 border border-zinc-900 hover:border-zinc-700 transition-all duration-300 group flex flex-col justify-between h-full"
             >
               <Quote className="absolute top-6 right-8 w-8 h-8 text-zinc-800 group-hover:text-violet-500/20 transition-colors" />
-              
+
               <div className="relative z-10">
                 <p className="text-zinc-300 leading-relaxed mb-8 italic">
                   &ldquo;{review.content}&rdquo;
                 </p>
-                
+              </div>
+
+              <div className="relative z-10 mt-4">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-500 font-bold">
                     {review.name.charAt(0)}
