@@ -35,6 +35,7 @@ export const PROJECTS: Project[] = [
     color: 'from-violet-500 to-indigo-500',
     featured: true,
     previewUrl: 'https://playground.hyperlambda.dev/',
+    gitUrl: '',
     challenge:
       'Building an agent that could autonomously execute multi-step dev workflows — not just respond — while keeping the interface responsive during long-running tasks.',
     solution:
@@ -57,6 +58,7 @@ export const PROJECTS: Project[] = [
     color: 'from-blue-500 to-cyan-500',
     featured: true,
     previewUrl: 'https://laferla.com.mt/',
+    gitUrl: '',
     challenge:
       "Translating a market-leading brand into a high-performance web presence that could rank competitively and convert organic traffic at scale.",
     solution:
@@ -78,6 +80,7 @@ export const PROJECTS: Project[] = [
     metrics: 'Cross-platform • Policy & claims management',
     color: 'from-sky-500 to-blue-600',
     previewUrl: 'https://play.google.com/store/apps/details?id=com.laferla.laferla',
+    gitUrl: '',
     challenge:
       'Bringing complex insurance workflows — policy purchase, claims tracking, document management — into a mobile experience that felt simple and trustworthy.',
     solution:
@@ -99,6 +102,7 @@ export const PROJECTS: Project[] = [
     metrics: 'Self-service • Reduced support load',
     color: 'from-teal-500 to-cyan-500',
     previewUrl: 'https://app.laferla.com.mt/',
+    gitUrl: '',
     challenge:
       'Reducing dependency on branch staff and phone support by making core insurance operations fully self-serviceable online.',
     solution:

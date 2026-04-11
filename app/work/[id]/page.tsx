@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import { ArrowLeft, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { PROJECTS } from '@/lib/constants';
@@ -75,10 +76,25 @@ export default function CaseStudyPage() {
                   </span>
                 ))}
               </div>
+              <div className="flex items-center gap-4 flex-wrap">
+                <div className="p-6 bg-zinc-950 border border-zinc-900 rounded-2xl inline-block">
+                  <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1">Impact Metric</p>
+                  <p className="text-2xl font-bold text-emerald-400">{project.metrics}</p>
+                </div>
 
-              <div className="p-6 bg-zinc-950 border border-zinc-900 rounded-2xl inline-block">
-                <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1">Impact Metric</p>
-                <p className="text-2xl font-bold text-emerald-400">{project.metrics}</p>
+                <div className="flex items-center gap-3">
+                  {project.previewUrl ? (
+                    <a href={project.previewUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black rounded-full font-medium hover:scale-105 transition-transform">
+                      View Live <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  ) : null}
+
+                  {project.gitUrl ? (
+                    <a href={project.gitUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-2 border border-zinc-800 rounded-full text-zinc-300 hover:border-zinc-700 transition-colors">
+                      View Code <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  ) : null}
+                </div>
               </div>
             </motion.div>
 
@@ -86,18 +102,23 @@ export default function CaseStudyPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="relative aspect-video lg:aspect-square rounded-3xl overflow-hidden border border-zinc-900"
+              className="relative aspect-video lg:aspect-square rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-900"
             >
-              <div className={cn("absolute inset-0 bg-gradient-to-br opacity-20", project.color)} />
-              <div className="absolute inset-0 bg-zinc-900/50 backdrop-blur-3xl" />
-              
-              {/* Abstract Visual Representation */}
-              <div className="absolute inset-12 bg-black rounded-2xl border border-zinc-800 shadow-2xl overflow-hidden">
-                <div className={cn("h-full w-full bg-gradient-to-br opacity-30", project.color)} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-32 h-32 rounded-full bg-white/5 blur-3xl animate-pulse" />
+              {project.images && project.images.length > 0 ? (
+                <div className="relative w-full h-full">
+                  <Image src={project.images[0] as any} alt={project.title} fill className="object-cover" />
+                  <div className={cn("absolute inset-0 bg-gradient-to-br opacity-20", project.color)} />
                 </div>
-              </div>
+              ) : (
+                <div className="absolute inset-0 bg-zinc-900/50 backdrop-blur-3xl">
+                  <div className="absolute inset-12 bg-black rounded-2xl border border-zinc-800 shadow-2xl overflow-hidden">
+                    <div className={cn("h-full w-full bg-gradient-to-br opacity-30", project.color)} />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-32 h-32 rounded-full bg-white/5 blur-3xl animate-pulse" />
+                    </div>
+                  </div>
+                </div>
+              )}
             </motion.div>
           </div>
 
@@ -125,25 +146,31 @@ export default function CaseStudyPage() {
             ))}
           </div>
 
-          {/* Visual Showcase (Placeholder for more images) */}
+          {/* Visual Showcase (additional images) */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32"
           >
-            <div className="h-96 bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden relative group">
-               <div className={cn("absolute inset-0 bg-gradient-to-tr opacity-10 group-hover:opacity-20 transition-opacity", project.color)} />
-               <div className="absolute inset-0 flex items-center justify-center text-zinc-800 font-mono text-xs uppercase tracking-widest">
-                 Interface Detail 01
-               </div>
-            </div>
-            <div className="h-96 bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden relative group">
-               <div className={cn("absolute inset-0 bg-gradient-to-bl opacity-10 group-hover:opacity-20 transition-opacity", project.color)} />
-               <div className="absolute inset-0 flex items-center justify-center text-zinc-800 font-mono text-xs uppercase tracking-widest">
-                 Interface Detail 02
-               </div>
-            </div>
+            {project.images && project.images.length > 1 ? (
+              project.images.slice(1).map((img, idx) => (
+                <div key={idx} className="h-64 md:h-80 bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden relative group">
+                  <Image src={img as any} alt={`${project.title} ${idx + 2}`} fill className="object-cover" />
+                  <div className={cn("absolute inset-0 bg-gradient-to-tr opacity-10 group-hover:opacity-20 transition-opacity", project.color)} />
+                </div>
+              ))
+            ) : (
+              // Fallback placeholders (keep two placeholders to match grid)
+              [0,1].map((i) => (
+                <div key={i} className="h-64 md:h-80 bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden relative group">
+                  <div className={cn("absolute inset-0 bg-gradient-to-tr opacity-10 group-hover:opacity-20 transition-opacity", project.color)} />
+                  <div className="absolute inset-0 flex items-center justify-center text-zinc-800 font-mono text-xs uppercase tracking-widest">
+                    Interface Detail {i + 1}
+                  </div>
+                </div>
+              ))
+            )}
           </motion.div>
 
           {/* CTA Section */}
