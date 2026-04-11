@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowUpRight, CheckCircle2, Eye, X } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Eye, X } from 'lucide-react';
 import { PROJECTS } from '@/lib/constants';
 import { Navigation } from '@/components/Navigation';
 import { Contact } from '@/components/Contact';
@@ -18,6 +18,23 @@ export default function CaseStudyPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalSrc, setModalSrc] = useState<string | null>(null);
   const [overlayIndex, setOverlayIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setModalOpen(false);
+        setOverlayIndex(null);
+      }
+    };
+
+    if (modalOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [modalOpen]);
 
   if (!project) {
     return (
@@ -113,7 +130,7 @@ export default function CaseStudyPage() {
             >
               {project.images && project.images.length > 0 ? (
                 <div className="relative w-full h-full">
-                  <Image src={project.images[0] as any} alt={project.title} fill className="object-cover" />
+                  <Image src={project.images[0] as any} alt={project.title} fill sizes="(max-width: 1024px) 100vw, 66vw" className="object-cover" />
                 </div>
               ) : (
                 <div className="absolute inset-0 bg-zinc-900/50 backdrop-blur-3xl">
@@ -165,7 +182,7 @@ export default function CaseStudyPage() {
                   key={idx}
                   className="relative aspect-video h-36 md:h-44 lg:h-56 rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-900 group cursor-pointer"
                 >
-                  <Image src={img} alt={`${project.title} ${idx + 2}`} fill className="object-cover" />
+                  <Image src={img} alt={`${project.title} ${idx + 2}`} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
 
                   <div className={`absolute inset-0 flex items-center justify-center transition-opacity ${overlayIndex === idx ? 'bg-black/40 opacity-100' : 'bg-black/0 opacity-0 group-hover:opacity-100 group-hover:bg-black/30'}`} onMouseEnter={() => setOverlayIndex(idx)} onMouseLeave={() => setOverlayIndex(null)}>
                     <button
@@ -206,7 +223,7 @@ export default function CaseStudyPage() {
                 </button>
 
                 <div className="w-full h-full flex items-center justify-center">
-                  <Image src={modalSrc as any} alt="Expanded project image" className="object-contain" style={{ maxHeight: '90vh', maxWidth: '90vw' }} />
+                  <Image src={modalSrc as any} alt="Expanded project image" width={1200} height={800} className="object-contain" style={{ maxHeight: '90vh', maxWidth: '90vw' }} />
                 </div>
               </div>
             </div>

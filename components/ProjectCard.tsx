@@ -41,7 +41,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
           <div className="absolute inset-4 bg-black rounded-lg overflow-hidden border border-zinc-800">
             <div className="relative h-full w-full">
               {project.images && project.images.length > 0 ? (
-                <Image src={project.images[0] as any} alt={project.title} fill className="object-cover" />
+                <Image src={project.images[0] as any} alt={project.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
               ) : (
                 // Fallback simulated UI if no image present (uses project color)
                 <>

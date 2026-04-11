@@ -17,7 +17,7 @@ export const Reviews = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {REVIEWS.map((review, i) => {
             const avatarContent = review.avatar ? (
-              <Image src={review.avatar as any} alt={review.name} className="w-full h-full object-cover" />
+              <Image src={review.avatar as any} alt={review.name} width={48} height={48} className="w-full h-full object-cover" />
             ) : (
               review.name.charAt(0)
             );
