@@ -34,7 +34,7 @@ export const Contact = () => {
           </h2>
           
           <p className="text-xl text-zinc-400 mb-12 max-w-lg mx-auto">
-            Currently open to collaborate. Working worldwide.
+            Currently open to collaborate. Remote worldwide.
           </p>
 
           {/* Availability Indicator */}

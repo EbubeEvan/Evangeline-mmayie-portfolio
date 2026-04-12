@@ -5,6 +5,8 @@ import aiDiagram from '@/assets/projects/ai-expert-system/diagram.png';
 import aiToolCall from '@/assets/projects/ai-expert-system/tool-call.png';
 
 import beautyMain from '@/assets/projects/beauty-care-ai/main.png';
+import beautyChatDark from '@/assets/projects/beauty-care-ai/chat-dark.png';
+import beautyChatLight from '@/assets/projects/beauty-care-ai/chat-light.png';
 
 import laferlaSiteMain from '@/assets/projects/laferla-website/main.png';
 import laferlaSiteAbout from '@/assets/projects/laferla-website/about.png';
@@ -150,6 +152,6 @@ export const PROJECTS: Project[] = [
       'Delivered an AI beauty consultant that responds to what it actually sees — giving personalised advice that generic chatbots cannot replicate.',
     fullDescription:
       'BeautyCare AI is a multimodal beauty consultation tool powered by AI. It analyses both images and text to understand a user\'s unique skin profile and deliver tailored advice, available on demand.',
-    images: [beautyMain],
+    images: [beautyMain, beautyChatDark, beautyChatLight],
   },
 ];
