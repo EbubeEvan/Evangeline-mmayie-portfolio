@@ -109,7 +109,7 @@ export const Projects = () => {
             <p className="text-zinc-400 mb-8">Craft across platforms.</p>
             
             <div className="flex flex-wrap gap-2">
-              {['All', 'Web', 'Mobile', 'Design System', 'Experiment'].map((cat) => (
+              {['All', 'Web', 'Mobile', 'AI'].map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setFilter(cat as any)}
