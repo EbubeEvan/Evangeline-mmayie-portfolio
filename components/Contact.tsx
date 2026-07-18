@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Copy, Check } from 'lucide-react';
+import { ArrowUpRight, Copy, Check } from 'lucide-react';
 
 export const Contact = () => {
   const [copied, setCopied] = useState(false);
@@ -15,83 +15,60 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 bg-[#050505] relative overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: `linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
-      }} />
+    <section id="contact" className="relative scroll-mt-20 overflow-hidden border-t border-[var(--line)] bg-[#0a0d0c] pt-24 md:pt-36">
+      <div className="command-grid absolute inset-0 opacity-20" aria-hidden="true" />
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <div className="section-shell relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="pb-24 md:pb-36"
         >
-          <h2 className="text-4xl md:text-7xl font-bold text-white mb-8 leading-tight">
-            Let&apos;s build<br />
-            <span className="text-zinc-600">something precise.</span>
-          </h2>
-          
-          <p className="text-xl text-zinc-400 mb-12 max-w-lg mx-auto">
-            Currently open to collaborate. Remote worldwide.
-          </p>
-
-          {/* Availability Indicator */}
-          <div className="flex items-center justify-center gap-2 mb-12">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-sm text-zinc-400">Available for work</span>
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="system-label">Channel open</p>
+            <div className="flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[#8a9690]">
+              <span className="h-2 w-2 bg-[#9dffb4] shadow-[0_0_12px_#9dffb4]" aria-hidden="true" />
+              <span>Available for selected work</span>
+            </div>
           </div>
 
-          {/* Email CTA */}
-          <div className="flex flex-col items-center gap-6">
+          <h2 className="mt-16 max-w-5xl text-balance text-[clamp(3.2rem,9vw,9rem)] font-medium leading-[0.84] text-[#e9f2ed]">
+            Let&apos;s build what comes next.
+          </h2>
+
+          <p className="mt-10 max-w-xl text-base leading-relaxed text-[#929e97] md:text-xl">
+            Web, mobile, or AI product. Send the context, the constraint, and the outcome you need.
+          </p>
+
+          <div className="mt-14 border-y border-[var(--line)] py-6 md:flex md:items-center md:justify-between md:gap-8">
             <a 
               href={`mailto:${email}?subject=Project Inquiry`}
-              className="group relative text-xl sm:text-3xl md:text-5xl font-bold text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-violet-500 hover:to-cyan-400 transition-all duration-300 break-all"
+              className="group flex min-w-0 items-center gap-3 text-[clamp(1.2rem,4vw,3.7rem)] font-medium text-[#e9f2ed] transition-colors hover:text-[#9dffb4]"
             >
-              {email}
-              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-cyan-400 group-hover:w-full transition-all duration-300" />
+              <span className="min-w-0 break-all">{email}</span>
+              <ArrowUpRight className="h-[0.8em] w-[0.8em] shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
             </a>
 
-            <div className="flex items-center gap-4">
-              <button
-                onClick={copyEmail}
-                className="flex items-center gap-2 px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-sm text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors"
-              >
-                {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                {copied ? 'Copied!' : 'Copy Email'}
-              </button>
-              
-              <a 
-                href={`mailto:${email}`}
-                className="md:hidden flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full font-semibold"
-              >
-                <Mail className="w-4 h-4" />
-                Send Email
-              </a>
-            </div>
+            <button
+              type="button"
+              onClick={copyEmail}
+              className="mt-5 inline-flex min-h-11 shrink-0 items-center gap-2 border border-[var(--line-strong)] px-4 font-mono text-[0.65rem] uppercase tracking-[0.1em] text-[#8a9690] transition-colors hover:border-[#9dffb4] hover:text-[#9dffb4] md:mt-0"
+            >
+              {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+              {copied ? 'Copied' : 'Copy address'}
+            </button>
+            <span className="sr-only" aria-live="polite">{copied ? 'Email address copied to clipboard' : ''}</span>
           </div>
         </motion.div>
 
-        {/* Footer */}
-        <div className="mt-32 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-600 text-sm">
+        <footer className="flex flex-col gap-5 border-t border-[var(--line)] py-7 font-mono text-[0.65rem] uppercase tracking-[0.1em] text-[#647069] md:flex-row md:items-center md:justify-between">
           <p>© 2026 Evangeline Mmayie. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="https://github.com/EbubeEvan" className="hover:text-white transition-colors">GitHub</a>
-            <a href="https://www.linkedin.com/in/evangeline-mmayie/" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://github.com/EbubeEvan" target="_blank" rel="noreferrer" className="transition-colors hover:text-[#9dffb4]">GitHub</a>
+            <a href="https://www.linkedin.com/in/evangeline-mmayie/" target="_blank" rel="noreferrer" className="transition-colors hover:text-[#9dffb4]">LinkedIn</a>
           </div>
-        </div>
-      </div>
-
-      {/* Sticky Mobile CTA */}
-      <div className="md:hidden fixed bottom-6 left-6 right-6 z-40">
-        <a 
-          href={`mailto:${email}`}
-          className="w-full py-4 bg-white text-black rounded-full font-semibold flex items-center justify-center gap-2 shadow-2xl"
-        >
-          <Mail className="w-5 h-5" />
-          Start a Project
-        </a>
+        </footer>
       </div>
     </section>
   );

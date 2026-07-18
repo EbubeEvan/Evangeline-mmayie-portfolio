@@ -36,6 +36,8 @@
 - **🖼️ Image Galleries**: Modal-based image viewers for project screenshots
 - **📧 Contact Integration**: Direct links to contact forms and social profiles
 - **🎭 Smooth Animations**: Framer Motion powered transitions and micro-interactions
+- **Procedural Command Scene**: Three.js signal core with responsive, reduced-motion-aware rendering
+- **Cinematic Case Studies**: Statically generated, image-led project narratives with accessible galleries
 
 ## 🛠️ Tech Stack
 
@@ -48,6 +50,7 @@
 - **Tailwind CSS 4** - Utility-first CSS framework
 - **Framer Motion** - Animation library
 - **Lucide React** - Icon library
+- **Three.js** - Procedural WebGL hero scene
 
 ### Development Tools
 - **ESLint** - Code linting
@@ -147,18 +150,18 @@ evangeline-mmayie-portfolio/
 ## 🎨 Design & UI
 
 ### Color Scheme
-- **Primary**: Dark theme with zinc color palette (#050505, #09090b)
-- **Accents**: Violet gradients for interactive elements
-- **Text**: White and zinc grays for optimal contrast
+- **Primary**: Graphite surfaces with cool-white typography
+- **Signals**: Green, cyan, amber, and project-specific status accents
+- **Atmosphere**: Restrained grids, grain, scan lines, and depth fog
 
 ### Typography
-- **Font Family**: System fonts for optimal performance
-- **Hierarchy**: Clear heading structure with responsive sizing
+- **Display**: Space Grotesk for editorial interface hierarchy
+- **Technical**: IBM Plex Mono for metadata and system labels
 
 ### Animations
-- **Hover Effects**: 3D transforms on project cards
-- **Page Transitions**: Smooth scroll-triggered animations
-- **Micro-interactions**: Button hover states and loading animations
+- **Opening Scene**: Dynamically loaded Three.js canvas with capped pixel density and cleanup
+- **Project Narrative**: Sticky desktop visual stage with stable inline mobile chapters
+- **Accessibility**: Global reduced-motion behavior, keyboard navigation, and native dialog semantics
 
 ## 📱 Responsive Design
 

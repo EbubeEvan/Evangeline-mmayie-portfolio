@@ -17,8 +17,8 @@ export const SkillNode = ({ skill, index }: { skill: Skill, index: number }) => 
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05, type: "spring" }}
-      whileHover={{ scale: 1.2, zIndex: 20 }}
-      className="absolute cursor-pointer group -translate-x-1/2 -translate-y-1/2"
+      whileHover={{ scale: 1.08, zIndex: 20 }}
+      className="group absolute -translate-x-1/2 -translate-y-1/2"
       style={{ 
         left: `${skill.x}%`, 
         top: `${skill.y}%`,
@@ -26,14 +26,12 @@ export const SkillNode = ({ skill, index }: { skill: Skill, index: number }) => 
     >
       <div className="relative">
         <div 
-          className="bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-full text-sm font-medium text-zinc-400 group-hover:text-white group-hover:border-zinc-600 transition-all whitespace-nowrap"
+          className="whitespace-nowrap border border-[var(--line-strong)] bg-[#0a0d0c]/90 px-4 py-2 font-mono text-sm font-medium text-[#8a9690] transition-all group-hover:border-[#9dffb4] group-hover:text-[#9dffb4]"
           style={{ fontSize: `${0.8 + skill.size * 0.2}rem` }}
         >
           {skill.name}
         </div>
-        
-        {/* Glow Effect */}
-        <div className="absolute inset-0 bg-violet-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
+        <div className="absolute inset-0 -z-10 bg-[#9dffb4]/15 opacity-0 blur-xl transition-opacity group-hover:opacity-100" />
       </div>
     </motion.div>
   );

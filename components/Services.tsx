@@ -6,18 +6,19 @@ import { ServiceCard } from './ServiceCard';
 
 export const Services = () => {
   return (
-    <section id="services" className="py-32 px-6 bg-zinc-950/30 border-y border-zinc-900 scroll-mt-24">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Services</h2>
-          <p className="text-zinc-400 max-w-xl">Clear offerings for specific outcomes. No scope creep, no surprises—just precise execution.</p>
+    <section id="services" className="scroll-mt-20 bg-[#050706] py-24 md:py-36">
+      <div className="section-shell">
+        <div className="mb-16 grid gap-8 lg:grid-cols-2 lg:items-end">
+          <div>
+            <p className="system-label mb-5">Capability matrix</p>
+            <h2 className="text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.88] text-[#e9f2ed]">Built to ship.</h2>
+          </div>
+          <p className="max-w-lg text-base leading-relaxed text-[#929e97] lg:justify-self-end md:text-lg">Focused engineering engagements for products that need to perform, scale, and feel unmistakably considered.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-zinc-900 border border-zinc-900">
+        <div className="border-b border-[var(--line)]">
           {SERVICES.map((service, i) => (
-            <div key={service.id} className="bg-[#050505]">
-              <ServiceCard service={service} index={i} />
-            </div>
+            <ServiceCard key={service.id} service={service} index={i} />
           ))}
         </div>
       </div>

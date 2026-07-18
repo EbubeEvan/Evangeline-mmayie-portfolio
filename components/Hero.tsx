@@ -1,24 +1,19 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
-import { Crystal3D } from './Crystal3D';
+import { motion } from 'motion/react';
+import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 
-const ROLES = ["Software Engineer", "Frontend Engineer", "Mobile Engineer"];
+const CommandScene = dynamic(
+  () => import('./CommandScene').then((module) => module.CommandScene),
+  { ssr: false },
+);
 
 export const Hero = () => {
-  const [roleIndex, setRoleIndex] = useState(0);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRoleIndex((prev) => (prev + 1) % ROLES.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (pathname === '/' && href.startsWith('/#')) {
@@ -33,80 +28,77 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden bg-[#050505]">
-      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8 text-center lg:text-left">
+    <section id="hero" className="relative min-h-[100svh] overflow-hidden bg-[#050706]">
+      <CommandScene />
+      <div className="command-grid absolute inset-0 opacity-30" aria-hidden="true" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,#050706_0%,rgba(5,7,6,0.92)_35%,rgba(5,7,6,0.22)_72%,#050706_100%)]" aria-hidden="true" />
+
+      <div className="section-shell relative z-10 flex min-h-[100svh] flex-col justify-between pb-8 pt-28 md:pb-10 md:pt-36">
+        <div className="grid flex-1 items-center lg:grid-cols-[1.08fr_0.92fr]">
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="system-label mb-8"
+            >
+              Systems online · Remote worldwide
+            </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+              transition={{ delay: 0.12, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
-              <span className="block text-zinc-500 text-lg md:text-xl font-normal mb-2 font-mono tracking-widest uppercase">Evangeline Mmayie</span>
-              <div className="h-[2.5em] relative overflow-hidden flex items-center justify-center lg:justify-start">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={ROLES[roleIndex]}
-                    initial={{ y: "100%", opacity: 0 }}
-                    animate={{ y: "0%", opacity: 1 }}
-                    exit={{ y: "-100%", opacity: 0 }}
-                    transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-                    className="bg-gradient-to-r from-violet-500 via-cyan-400 to-violet-500 bg-clip-text text-transparent py-2"
-                  >
-                    {ROLES[roleIndex]}
-                  </motion.span>
-                </AnimatePresence>
-              </div>
+              <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-[#8a9690] md:text-sm">
+                Evangeline Mmayie / Software Engineer
+              </p>
+              <h1 className="text-balance max-w-4xl text-[clamp(3.25rem,8.4vw,8.25rem)] font-semibold leading-[0.84] text-[#e9f2ed]">
+                Engineering digital systems that move.
             </h1>
-            
-            <p className="text-lg md:text-xl text-zinc-400 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              Building scalable business solutions
+              <p className="mt-8 max-w-xl text-base leading-relaxed text-[#a2ada7] md:text-xl">
+                I build high-performance web, mobile, and AI products where rigorous engineering meets expressive interaction.
             </p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
+              transition={{ delay: 0.34, duration: 0.6 }}
+              className="mt-10 flex flex-wrap items-center gap-3"
           >
             <Link 
               href="/#work"
               onClick={(e) => handleLinkClick(e as any, '/#work')}
-              className="px-8 py-4 bg-white text-black rounded-full font-semibold hover:bg-zinc-200 transition-colors flex items-center gap-2 group"
+                className="group inline-flex min-h-12 items-center gap-3 bg-[#9dffb4] px-5 text-sm font-semibold text-[#031008] transition-colors hover:bg-white"
             >
-              View Selected Work
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                Enter selected work
+                <ArrowDownRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
             </Link>
             <Link 
-              href="/#services"
-              onClick={(e) => handleLinkClick(e as any, '/#services')}
-              className="px-8 py-4 text-white border border-zinc-800 rounded-full font-semibold hover:border-zinc-600 transition-colors"
+                href="/#contact"
+                onClick={(e) => handleLinkClick(e as any, '/#contact')}
+                className="group inline-flex min-h-12 items-center gap-3 border border-[var(--line-strong)] px-5 text-sm font-semibold text-[#e9f2ed] transition-colors hover:border-[#9dffb4] hover:text-[#9dffb4]"
             >
-              Explore Services
+                Start a project
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Link>
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="flex items-center justify-center"
-        >
-          <Crystal3D />
-        </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-px h-16 bg-gradient-to-b from-zinc-800 to-transparent" />
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className="grid grid-cols-2 gap-4 border-t border-[var(--line)] pt-5 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-[#6f7a74] md:grid-cols-4 md:text-xs"
+        >
+          <span>Interface / 01</span>
+          <span className="hidden md:block">Build / 2026.07</span>
+          <span className="md:text-center">Scroll to navigate</span>
+          <span className="text-right text-[#9dffb4]">Signal stable</span>
+        </motion.div>
+      </div>
     </section>
   );
 };

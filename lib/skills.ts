@@ -12,7 +12,7 @@ export const SKILLS = [
   { name: 'HTML', x: 10, y: 30, size: 0.6 },
   { name: 'CSS', x: 10, y: 50, size: 0.6 },
   { name: 'Javascript', x: 55, y: 30, size: 0.8 },
-  { name: 'Github Copilot', x: 45, y: 45, size: 0.7 },
+  { name: 'Express', x: 45, y: 45, size: 0.7 },
   { name: 'Firebase', x: 25, y: 85, size: 0.7 },
   { name: 'Supabase', x: 60, y: 90, size: 0.7 },
 ];

@@ -34,6 +34,7 @@ export const PROJECTS: Project[] = [
     tech: ['Next.js', 'Gemini', 'TypeScript', 'Tailwind CSS', 'Web Speech API'],
     metrics: 'Multimodal AI • Audio + Visual consultations',
     color: 'from-rose-500 to-pink-500',
+    accent: '#ff8ba7',
     featured: true,
     gitUrl: 'https://github.com/EbubeEvan/Beauty-Care-AI',
     previewUrl: 'https://beauty-care-ai.vercel.app/',
@@ -56,6 +57,7 @@ export const PROJECTS: Project[] = [
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'SEO'],
     metrics: 'Core Web Vitals • SEO optimised',
     color: 'from-blue-500 to-cyan-500',
+    accent: '#6dd9e7',
     featured: true,
     previewUrl: 'https://laferla.com.mt/',
     gitUrl: '',
@@ -78,6 +80,7 @@ export const PROJECTS: Project[] = [
     tech: ['React Native', 'TypeScript', 'REST APIs', 'Push Notifications'],
     metrics: 'Cross-platform • Policy & claims management',
     color: 'from-sky-500 to-blue-600',
+    accent: '#75a7ff',
     previewUrl: 'https://play.google.com/store/apps/details?id=com.laferla.laferla',
     gitUrl: '',
     challenge:
@@ -99,6 +102,7 @@ export const PROJECTS: Project[] = [
     tech: ['React', 'TypeScript', 'REST APIs', 'Auth'],
     metrics: 'Self-service • Reduced support load',
     color: 'from-teal-500 to-cyan-500',
+    accent: '#55e6c1',
     previewUrl: 'https://app.laferla.com.mt/',
     gitUrl: '',
     challenge:
@@ -120,6 +124,7 @@ export const PROJECTS: Project[] = [
     tech: ['React Native', 'Expo', 'Maps API', 'Real-time'],
     metrics: 'Live tracking • Real-time matching',
     color: 'from-amber-500 to-orange-500',
+    accent: '#ffbd59',
     gitUrl: 'https://github.com/EbubeEvan/Lyfter',
     previewUrl: 'https://expo.dev/artifacts/eas/wPs2Hmyg6gRfuqbrDCME3E.apk',
     challenge:
@@ -141,6 +146,7 @@ export const PROJECTS: Project[] = [
     tech: ['React', 'Node.js', 'OpenAI', 'WebSockets'],
     metrics: 'Autonomous • Real-time multimodal',
     color: 'from-violet-500 to-indigo-500',
+    accent: '#a99cff',
     featured: true,
     previewUrl: 'https://playground.hyperlambda.dev/',
     gitUrl: '',

@@ -11,6 +11,7 @@ export interface Project {
   tech: string[];
   metrics: string;
   color: string;
+  accent: string;
   featured?: boolean;
   challenge?: string;
   solution?: string;

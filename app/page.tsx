@@ -10,14 +10,14 @@ import { Contact } from "@/components/Contact";
 export default function Home() {
 
   return (
-    <div className="min-h-screen bg-[#050505] text-zinc-100 selection:bg-violet-500/30 font-sans">
+    <div className="min-h-screen bg-[#050706] font-sans text-[#e9f2ed]">
       <Navigation />
       
       <main>
         <Hero />
+        <Projects />
         <About />
         <Services />
-        <Projects />
         <Reviews />
         <Skills />
         <Contact />
