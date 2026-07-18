@@ -17,6 +17,19 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://evangeline-mmayie.dev"),
   title: "Evangeline Mmayie | Software Engineer",
   description: "Portfolio of a creative software engineer specialized in web and mobile development",
+  openGraph: {
+    title: "Evangeline Mmayie | Software Engineer",
+    description: "Portfolio of a creative software engineer specialized in web and mobile development",
+    url: "https://evangeline-mmayie.dev",
+    siteName: "Evangeline Mmayie",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Evangeline Mmayie | Software Engineer",
+    description: "Portfolio of a creative software engineer specialized in web and mobile development",
+  },
 };
 
 export default function RootLayout({
