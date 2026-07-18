@@ -73,7 +73,7 @@ button {
 }
 
 .section-shell {
-  width: min(calc(100% - 2rem), 80rem);
+  width: min(calc(100% - 2.5rem), 104rem);
   margin-inline: auto;
 }
 
@@ -113,7 +113,13 @@ button {
 
 @media (min-width: 768px) {
   .section-shell {
-    width: min(calc(100% - 4rem), 80rem);
+    width: min(calc(100% - 4rem), 104rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-shell {
+    width: min(calc(100% - 6rem), 104rem);
   }
 }
 

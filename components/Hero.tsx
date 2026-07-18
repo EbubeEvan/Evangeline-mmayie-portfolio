@@ -33,7 +33,7 @@ export const Hero = () => {
       <div className="command-grid absolute inset-0 opacity-30" aria-hidden="true" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,#050706_0%,rgba(5,7,6,0.92)_35%,rgba(5,7,6,0.22)_72%,#050706_100%)]" aria-hidden="true" />
 
-      <div className="section-shell relative z-10 flex min-h-[100svh] flex-col justify-between pb-8 pt-28 md:pb-10 md:pt-36">
+      <div className="section-shell relative z-10 flex min-h-svh flex-col justify-between pb-8 pt-28 md:pb-10 md:pt-36">
         <div className="grid flex-1 items-center lg:grid-cols-[1.08fr_0.92fr]">
           <div className="max-w-4xl">
             <motion.div
