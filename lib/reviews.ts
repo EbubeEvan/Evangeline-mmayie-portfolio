@@ -2,7 +2,7 @@ import { Review } from './types';
 import thomas from '@/assets/reviewers/thomas.png'
 import marina from '@/assets/reviewers/marina.png'
 import gar from '@/assets/reviewers/gar.png'
-import joseph from '@/assets/reviewers/Joseph.png'
+import joseph from '@/assets/reviewers/joseph.png'
 
 export const REVIEWS: Review[] = [
   {
