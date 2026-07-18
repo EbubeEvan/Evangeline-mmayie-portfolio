@@ -14,13 +14,13 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://evangeline-mmayie.dev"),
+  metadataBase: new URL("https://evangeline-mmayie.vercel.app"),
   title: "Evangeline Mmayie | Software Engineer",
   description: "Portfolio of a creative software engineer specialized in web and mobile development",
   openGraph: {
     title: "Evangeline Mmayie | Software Engineer",
     description: "Portfolio of a creative software engineer specialized in web and mobile development",
-    url: "https://evangeline-mmayie.dev",
+    url: "https://evangeline-mmayie.vercel.app",
     siteName: "Evangeline Mmayie",
     type: "website",
     locale: "en_US",
