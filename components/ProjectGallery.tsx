@@ -14,33 +14,26 @@ export const ProjectGallery = ({ images, title }: { images: GalleryImage[]; titl
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (isOpen && !dialog.open) dialog.showModal();
+    else if (!isOpen && dialog.open) dialog.close();
+  }, [isOpen]);
+
+  useEffect(() => {
     if (!isOpen) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     closeButtonRef.current?.focus();
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setActiveIndex(null);
       if (event.key === 'ArrowLeft') setActiveIndex((index) => index === null ? null : (index - 1 + images.length) % images.length);
       if (event.key === 'ArrowRight') setActiveIndex((index) => index === null ? null : (index + 1) % images.length);
-      if (event.key !== 'Tab') return;
-      const controls = dialogRef.current?.querySelectorAll<HTMLElement>('button:not([disabled])');
-      if (!controls?.length) return;
-      const first = controls[0];
-      const last = controls[controls.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
     };
     document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener('keydown', handleKeyDown);
-      triggerRef.current?.focus();
     };
   }, [isOpen, images.length]);
 
@@ -68,40 +61,46 @@ export const ProjectGallery = ({ images, title }: { images: GalleryImage[]; titl
         ))}
       </div>
 
-      {activeIndex !== null ? (
-        <dialog
-          open
-          ref={dialogRef}
-          aria-label={`${title} image viewer`}
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-[#020302]/95 p-4 md:p-10"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget) setActiveIndex(null);
-          }}
-        >
-          <div className="relative h-[min(82vh,56rem)] w-full max-w-7xl">
-            <Image src={images[activeIndex]} alt={`${title} expanded interface view ${activeIndex + 1}`} fill sizes="95vw" className="object-contain" priority />
-          </div>
+      <dialog
+        ref={dialogRef}
+        aria-label={`${title} image viewer`}
+        onClose={() => {
+          setActiveIndex(null);
+          triggerRef.current?.focus();
+        }}
+        onCancel={() => setActiveIndex(null)}
+        onMouseDown={(event) => {
+          if (event.target === event.currentTarget) setActiveIndex(null);
+        }}
+        className="fixed inset-0 m-0 hidden h-full max-h-none w-full max-w-none items-center justify-center bg-[#020302]/95 p-4 backdrop:bg-[#020302]/95 open:flex md:p-10"
+      >
+        {activeIndex !== null ? (
+          <>
+            <div className="relative h-[min(82vh,56rem)] w-full max-w-7xl">
+              <Image src={images[activeIndex]} alt={`${title} expanded interface view ${activeIndex + 1}`} fill sizes="95vw" className="object-contain" priority />
+            </div>
 
-          <button ref={closeButtonRef} type="button" onClick={() => setActiveIndex(null)} className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-white/20 bg-black/50 text-white hover:bg-white hover:text-black md:right-8 md:top-8" aria-label="Close image viewer">
-            <X className="h-5 w-5" />
-          </button>
+            <button ref={closeButtonRef} type="button" onClick={() => setActiveIndex(null)} className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-white/20 bg-black/50 text-white hover:bg-white hover:text-black md:right-8 md:top-8" aria-label="Close image viewer">
+              <X className="h-5 w-5" />
+            </button>
 
-          {images.length > 1 ? (
-            <>
-              <button type="button" onClick={() => setActiveIndex((activeIndex - 1 + images.length) % images.length)} className="absolute bottom-5 left-4 flex h-11 w-11 items-center justify-center border border-white/20 bg-black/50 text-white hover:bg-white hover:text-black md:bottom-auto md:left-8 md:top-1/2 md:-translate-y-1/2" aria-label="Previous image">
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button type="button" onClick={() => setActiveIndex((activeIndex + 1) % images.length)} className="absolute bottom-5 right-4 flex h-11 w-11 items-center justify-center border border-white/20 bg-black/50 text-white hover:bg-white hover:text-black md:bottom-auto md:right-8 md:top-1/2 md:-translate-y-1/2" aria-label="Next image">
-                <ChevronRight className="h-5 w-5" />
-              </button>
-            </>
-          ) : null}
+            {images.length > 1 ? (
+              <>
+                <button type="button" onClick={() => setActiveIndex((activeIndex - 1 + images.length) % images.length)} className="absolute bottom-5 left-4 flex h-11 w-11 items-center justify-center border border-white/20 bg-black/50 text-white hover:bg-white hover:text-black md:bottom-auto md:left-8 md:top-1/2 md:-translate-y-1/2" aria-label="Previous image">
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button type="button" onClick={() => setActiveIndex((activeIndex + 1) % images.length)} className="absolute bottom-5 right-4 flex h-11 w-11 items-center justify-center border border-white/20 bg-black/50 text-white hover:bg-white hover:text-black md:bottom-auto md:right-8 md:top-1/2 md:-translate-y-1/2" aria-label="Next image">
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </>
+            ) : null}
 
-          <p className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-white/60">
-            {String(activeIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
-          </p>
-        </dialog>
-      ) : null}
+            <p className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-white/60">
+              {String(activeIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+            </p>
+          </>
+        ) : null}
+      </dialog>
     </>
   );
 };

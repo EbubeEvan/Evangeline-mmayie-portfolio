@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const NAV_ITEMS = ['About', 'Services', 'Work', 'Reviews', 'Skills', 'Contact'];
+const NAV_ITEMS = ['Work', 'About', 'Services', 'Reviews', 'Skills', 'Contact'];
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,28 +22,10 @@ export const Navigation = () => {
   }, []);
 
   useEffect(() => {
-    if (pathname !== '/') return;
-
-    const frames: number[] = [];
-    let timeout = 0;
-    const restoreHashPosition = () => {
-      const id = window.location.hash.slice(1);
-      if (!id) return;
-      frames.push(window.requestAnimationFrame(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'auto', block: 'start' });
-      }));
-    };
-
-    restoreHashPosition();
-    document.fonts.ready.then(restoreHashPosition);
-    timeout = window.setTimeout(restoreHashPosition, 180);
-    window.addEventListener('hashchange', restoreHashPosition);
-    return () => {
-      frames.forEach((frame) => window.cancelAnimationFrame(frame));
-      window.clearTimeout(timeout);
-      window.removeEventListener('hashchange', restoreHashPosition);
-    };
-  }, [pathname]);
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'auto';
+    }
+  }, []);
 
   useEffect(() => {
     if (pathname !== '/') return;

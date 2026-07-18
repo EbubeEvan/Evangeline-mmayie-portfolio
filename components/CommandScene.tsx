@@ -126,7 +126,7 @@ export const CommandScene = () => {
       camera.position.set(profile.cameraX, 0, profile.cameraZ);
       world.position.x = profile.worldX;
       world.scale.setScalar(profile.scale);
-      renderer.setSize(clientWidth, clientHeight, false);
+      renderer.setSize(clientWidth, clientHeight);
       camera.aspect = clientWidth / Math.max(clientHeight, 1);
       camera.updateProjectionMatrix();
     };

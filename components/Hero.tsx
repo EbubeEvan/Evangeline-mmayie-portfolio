@@ -28,7 +28,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-[100svh] overflow-hidden bg-[#050706]">
+    <section id="hero" className="relative min-h-svh overflow-hidden bg-[#050706]">
       <CommandScene />
       <div className="command-grid absolute inset-0 opacity-30" aria-hidden="true" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,#050706_0%,rgba(5,7,6,0.92)_35%,rgba(5,7,6,0.22)_72%,#050706_100%)]" aria-hidden="true" />
@@ -94,7 +94,7 @@ export const Hero = () => {
           className="grid grid-cols-2 gap-4 border-t border-[var(--line)] pt-5 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-[#6f7a74] md:grid-cols-4 md:text-xs"
         >
           <span>Interface / 01</span>
-          <span className="hidden md:block">Build / 2026.07</span>
+          <span >Build / 2026.07</span>
           <span className="md:text-center">Scroll to navigate</span>
           <span className="text-right text-[#9dffb4]">Signal stable</span>
         </motion.div>
