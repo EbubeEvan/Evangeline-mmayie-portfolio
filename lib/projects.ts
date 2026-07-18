@@ -27,25 +27,25 @@ import lyfterSelect from '@/assets/projects/lyfter/ride-select.jpg';
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'AI Expert System',
+    title: 'BeautyCare AI',
     category: ['Web', 'AI'],
     description:
-      'Most AI chatbots can only talk. The AI Expert System is an autonomous agent that acts — completing dev tasks like setting up GitHub repos, writing code, and deploying full-stack projects through a real-time multimodal chat interface.',
-    tech: ['React', 'Node.js', 'OpenAI', 'WebSockets'],
-    metrics: 'Autonomous • Real-time multimodal',
-    color: 'from-violet-500 to-indigo-500',
+      'Generic beauty advice ignores your skin, your tone, your needs. BeautyCare AI delivers personalised consultations through text, images, and voice — like having a beauty specialist available 24/7.',
+    tech: ['Next.js', 'Gemini', 'TypeScript', 'Tailwind CSS', 'Web Speech API'],
+    metrics: 'Multimodal AI • Audio + Visual consultations',
+    color: 'from-rose-500 to-pink-500',
     featured: true,
-    previewUrl: 'https://playground.hyperlambda.dev/',
-    gitUrl: '',
+    gitUrl: 'https://github.com/EbubeEvan/Beauty-Care-AI',
+    previewUrl: 'https://beauty-care-ai.vercel.app/',
     challenge:
-      'Building an agent that could autonomously execute multi-step dev workflows — not just respond — while keeping the interface responsive during long-running tasks.',
+      'Moving beyond generic AI responses to deliver beauty advice that accounts for individual skin tone, type, and concerns — while supporting both visual analysis and voice-based interaction.',
     solution:
-      'Designed an event-driven pipeline with real-time WebSocket feedback, allowing the agent to stream progress updates and intermediate outputs back to the user as each step completed.',
+      'Integrated a multimodal AI pipeline that analyses user-submitted images and text inputs alongside audio input via speech-to-text, enabling hands-free consultations and generating contextual, personalised product and routine recommendations.',
     outcome:
-      'Delivered a working autonomous dev agent capable of scaffolding, writing, and deploying full-stack projects end-to-end through a single chat interface.',
+      'Delivered an AI beauty consultant that responds to what it sees and hears — giving personalised advice through text or voice that generic chatbots cannot replicate.',
     fullDescription:
-      'The AI Expert System goes beyond conversational AI — it is an autonomous agent that executes real development tasks. Users interact through a multimodal chat interface while the agent handles everything from repository setup to deployment.',
-    images: [aiMain, aiDiagram, aiToolCall],
+      'BeautyCare AI is a multimodal beauty consultation tool powered by AI. It analyses images, text, and voice input to understand a user\'s unique skin profile and deliver tailored advice through text or voice output — available on demand.',
+    images: [beautyMain, beautyChatDark, beautyChatLight],
   },
   {
     id: '2',
@@ -134,24 +134,24 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '6',
-    title: 'BeautyCare AI',
+    title: 'AI Expert System',
     category: ['Web', 'AI'],
     description:
-      'Generic beauty advice ignores your skin, your tone, your needs. BeautyCare AI delivers personalised consultations by analysing both text and images — like having a beauty specialist available 24/7.',
-    tech: ['Next.js', 'Gemini', 'TypeScript', 'Tailwind CSS'],
-    metrics: 'Multimodal AI • Personalised advice',
-    color: 'from-rose-500 to-pink-500',
+      'Most AI chatbots can only talk. The AI Expert System is an autonomous agent that acts — completing dev tasks like setting up GitHub repos, writing code, and deploying full-stack projects through a real-time multimodal chat interface.',
+    tech: ['React', 'Node.js', 'OpenAI', 'WebSockets'],
+    metrics: 'Autonomous • Real-time multimodal',
+    color: 'from-violet-500 to-indigo-500',
     featured: true,
-    gitUrl: 'https://github.com/EbubeEvan/Beauty-Care-AI',
-    previewUrl: 'https://beauty-care-ai.vercel.app/',
+    previewUrl: 'https://playground.hyperlambda.dev/',
+    gitUrl: '',
     challenge:
-      'Moving beyond generic AI responses to deliver beauty advice that actually accounts for individual skin tone, type, and specific concerns from real images.',
+      'Building an agent that could autonomously execute multi-step dev workflows — not just respond — while keeping the interface responsive during long-running tasks.',
     solution:
-      'Integrated a multimodal AI pipeline capable of analysing user-submitted images alongside text inputs to generate contextual, personalised product and routine recommendations.',
+      'Designed an event-driven pipeline with real-time WebSocket feedback, allowing the agent to stream progress updates and intermediate outputs back to the user as each step completed.',
     outcome:
-      'Delivered an AI beauty consultant that responds to what it actually sees — giving personalised advice that generic chatbots cannot replicate.',
+      'Delivered a working autonomous dev agent capable of scaffolding, writing, and deploying full-stack projects end-to-end through a single chat interface.',
     fullDescription:
-      'BeautyCare AI is a multimodal beauty consultation tool powered by AI. It analyses both images and text to understand a user\'s unique skin profile and deliver tailored advice, available on demand.',
-    images: [beautyMain, beautyChatDark, beautyChatLight],
+      'The AI Expert System goes beyond conversational AI — it is an autonomous agent that executes real development tasks. Users interact through a multimodal chat interface while the agent handles everything from repository setup to deployment.',
+    images: [aiMain, aiDiagram, aiToolCall],
   },
 ];
