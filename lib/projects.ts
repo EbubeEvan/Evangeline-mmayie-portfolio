@@ -8,6 +8,10 @@ import beautyMain from '@/assets/projects/beauty-care-ai/main.png';
 import beautyChatDark from '@/assets/projects/beauty-care-ai/chat-dark.png';
 import beautyChatLight from '@/assets/projects/beauty-care-ai/chat-light.png';
 
+import voltxMain from '@/assets/projects/voltx/main.png';
+import voltxDetails from '@/assets/projects/voltx/details.png';
+import voltxProducts from '@/assets/projects/voltx/products.png';
+
 import laferlaSiteMain from '@/assets/projects/laferla-website/main.png';
 import laferlaSiteAbout from '@/assets/projects/laferla-website/about.png';
 import laferlaSiteTravel from '@/assets/projects/laferla-website/travel.png';
@@ -27,6 +31,28 @@ import lyfterSelect from '@/assets/projects/lyfter/ride-select.jpg';
 export const PROJECTS: Project[] = [
   {
     id: '1',
+    title: 'Voltx',
+    category: ['Web'],
+    description:
+      'Shopping for gadgets should feel as polished as the products themselves. Voltx is an online store built to make discovery, comparison, and checkout feel effortless from first click to final purchase.',
+    tech: ['Tanstack Start', 'TypeScript', 'Tailwind CSS', 'E-commerce UI', 'Checkout Flow'],
+    metrics: 'Commerce-ready • Product discovery',
+    color: 'from-emerald-500 to-lime-500',
+    accent: '#8bf2a8',
+    featured: true,
+    previewUrl: 'https://voltx-tech.vercel.app/',
+    challenge:
+      'Creating a storefront that could showcase a broad range of gadgets while keeping product discovery, trust, and the purchase flow simple and fast.',
+    solution:
+      'Designed a clean e-commerce experience with structured browsing, clear category storytelling, and focused conversion paths that guide users from exploration to checkout without friction.',
+    outcome:
+      'Delivered a modern online gadget store that feels intuitive, premium, and built for conversion.',
+    fullDescription:
+      'Voltx is an online gadget store focused on making tech shopping feel clear and enjoyable. The experience combines strong visual merchandising with straightforward product discovery and streamlined checkout to help customers find and buy the right device with confidence.',
+    images: [voltxMain, voltxDetails, voltxProducts],
+  },
+  {
+    id: '2',
     title: 'BeautyCare AI',
     category: ['Web', 'AI'],
     description:
@@ -49,7 +75,7 @@ export const PROJECTS: Project[] = [
     images: [beautyMain, beautyChatDark, beautyChatLight],
   },
   {
-    id: '2',
+    id: '3',
     title: 'Laferla Website',
     category: ['Web'],
     description:
@@ -72,7 +98,7 @@ export const PROJECTS: Project[] = [
     images: [laferlaSiteMain, laferlaSiteAbout, laferlaSiteTravel],
   },
   {
-    id: '3',
+    id: '4',
     title: 'Laferla Insurance Mobile App',
     category: ['Mobile'],
     description:
@@ -94,7 +120,7 @@ export const PROJECTS: Project[] = [
     images: [laferlaMobileMain, laferlaMobileHand, laferlaMobilePowerful],
   },
   {
-    id: '4',
+    id: '5',
     title: 'Laferla Insurance Web App',
     category: ['Web'],
     description:
@@ -116,7 +142,7 @@ export const PROJECTS: Project[] = [
     images: [laferlaWebMain, laferlaWebBuy, laferlaWebProfile],
   },
   {
-    id: '5',
+    id: '6',
     title: 'Lyfter',
     category: ['Mobile'],
     description:
@@ -138,7 +164,7 @@ export const PROJECTS: Project[] = [
     images: [lyfterBanner, lyfterDetails, lyfterSelect],
   },
   {
-    id: '6',
+    id: '7',
     title: 'AI Expert System',
     category: ['Web', 'AI'],
     description:
