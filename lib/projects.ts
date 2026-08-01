@@ -30,51 +30,6 @@ import lyfterSelect from '@/assets/projects/lyfter/ride-select.jpg';
 
 export const PROJECTS: Project[] = [
   {
-    id: '1',
-    title: 'Voltx',
-    category: ['Web'],
-    description:
-      'Shopping for gadgets should feel as polished as the products themselves. Voltx is an online store built to make discovery, comparison, and checkout feel effortless from first click to final purchase.',
-    tech: ['Tanstack Start', 'TypeScript', 'Tailwind CSS', 'E-commerce UI', 'Checkout Flow'],
-    metrics: 'Commerce-ready • Product discovery',
-    color: 'from-emerald-500 to-lime-500',
-    accent: '#8bf2a8',
-    featured: true,
-    previewUrl: 'https://voltx-tech.vercel.app/',
-    challenge:
-      'Creating a storefront that could showcase a broad range of gadgets while keeping product discovery, trust, and the purchase flow simple and fast.',
-    solution:
-      'Designed a clean e-commerce experience with structured browsing, clear category storytelling, and focused conversion paths that guide users from exploration to checkout without friction.',
-    outcome:
-      'Delivered a modern online gadget store that feels intuitive, premium, and built for conversion.',
-    fullDescription:
-      'Voltx is an online gadget store focused on making tech shopping feel clear and enjoyable. The experience combines strong visual merchandising with straightforward product discovery and streamlined checkout to help customers find and buy the right device with confidence.',
-    images: [voltxMain, voltxDetails, voltxProducts],
-  },
-  {
-    id: '2',
-    title: 'BeautyCare AI',
-    category: ['Web', 'AI'],
-    description:
-      'Generic beauty advice ignores your skin, your tone, your needs. BeautyCare AI delivers personalised consultations through text, images, and voice — like having a beauty specialist available 24/7.',
-    tech: ['Next.js', 'Gemini', 'TypeScript', 'Tailwind CSS', 'Web Speech API'],
-    metrics: 'Multimodal AI • Audio + Visual consultations',
-    color: 'from-rose-500 to-pink-500',
-    accent: '#ff8ba7',
-    featured: true,
-    gitUrl: 'https://github.com/EbubeEvan/Beauty-Care-AI',
-    previewUrl: 'https://beauty-care-ai.vercel.app/',
-    challenge:
-      'Moving beyond generic AI responses to deliver beauty advice that accounts for individual skin tone, type, and concerns — while supporting both visual analysis and voice-based interaction.',
-    solution:
-      'Integrated a multimodal AI pipeline that analyses user-submitted images and text inputs alongside audio input via speech-to-text, enabling hands-free consultations and generating contextual, personalised product and routine recommendations.',
-    outcome:
-      'Delivered an AI beauty consultant that responds to what it sees and hears — giving personalised advice through text or voice that generic chatbots cannot replicate.',
-    fullDescription:
-      'BeautyCare AI is a multimodal beauty consultation tool powered by AI. It analyses images, text, and voice input to understand a user\'s unique skin profile and deliver tailored advice through text or voice output — available on demand.',
-    images: [beautyMain, beautyChatDark, beautyChatLight],
-  },
-  {
     id: '3',
     title: 'Laferla Website',
     category: ['Web'],
@@ -142,6 +97,29 @@ export const PROJECTS: Project[] = [
     images: [laferlaWebMain, laferlaWebBuy, laferlaWebProfile],
   },
   {
+    id: '7',
+    title: 'AI Expert System',
+    category: ['Web', 'AI'],
+    description:
+      'Most AI chatbots can only talk. The AI Expert System is an autonomous agent that acts — completing dev tasks like setting up GitHub repos, writing code, and deploying full-stack projects through a real-time multimodal chat interface.',
+    tech: ['React', 'Node.js', 'OpenAI', 'WebSockets'],
+    metrics: 'Autonomous • Real-time multimodal',
+    color: 'from-violet-500 to-indigo-500',
+    accent: '#a99cff',
+    featured: true,
+    previewUrl: 'https://playground.hyperlambda.dev/',
+    gitUrl: '',
+    challenge:
+      'Building an agent that could autonomously execute multi-step dev workflows — not just respond — while keeping the interface responsive during long-running tasks.',
+    solution:
+      'Designed an event-driven pipeline with real-time WebSocket feedback, allowing the agent to stream progress updates and intermediate outputs back to the user as each step completed.',
+    outcome:
+      'Delivered a working autonomous dev agent capable of scaffolding, writing, and deploying full-stack projects end-to-end through a single chat interface.',
+    fullDescription:
+      'The AI Expert System goes beyond conversational AI — it is an autonomous agent that executes real development tasks. Users interact through a multimodal chat interface while the agent handles everything from repository setup to deployment.',
+    images: [aiMain, aiDiagram, aiToolCall],
+  },
+  {
     id: '6',
     title: 'Lyfter',
     category: ['Mobile'],
@@ -164,26 +142,48 @@ export const PROJECTS: Project[] = [
     images: [lyfterBanner, lyfterDetails, lyfterSelect],
   },
   {
-    id: '7',
-    title: 'AI Expert System',
+    id: '1',
+    title: 'Voltx',
+    category: ['Web'],
+    description:
+      'Shopping for gadgets should feel as polished as the products themselves. Voltx is an online store built to make discovery, comparison, and checkout feel effortless from first click to final purchase.',
+    tech: ['Tanstack Start', 'TypeScript', 'Tailwind CSS', 'E-commerce UI', 'Checkout Flow'],
+    metrics: 'Commerce-ready • Product discovery',
+    color: 'from-emerald-500 to-lime-500',
+    accent: '#8bf2a8',
+    featured: true,
+    previewUrl: 'https://voltx-tech.vercel.app/',
+    challenge:
+      'Creating a storefront that could showcase a broad range of gadgets while keeping product discovery, trust, and the purchase flow simple and fast.',
+    solution:
+      'Designed a clean e-commerce experience with structured browsing, clear category storytelling, and focused conversion paths that guide users from exploration to checkout without friction.',
+    outcome:
+      'Delivered a modern online gadget store that feels intuitive, premium, and built for conversion.',
+    fullDescription:
+      'Voltx is an online gadget store focused on making tech shopping feel clear and enjoyable. The experience combines strong visual merchandising with straightforward product discovery and streamlined checkout to help customers find and buy the right device with confidence.',
+    images: [voltxMain, voltxDetails, voltxProducts],
+  },
+  {
+    id: '2',
+    title: 'BeautyCare AI',
     category: ['Web', 'AI'],
     description:
-      'Most AI chatbots can only talk. The AI Expert System is an autonomous agent that acts — completing dev tasks like setting up GitHub repos, writing code, and deploying full-stack projects through a real-time multimodal chat interface.',
-    tech: ['React', 'Node.js', 'OpenAI', 'WebSockets'],
-    metrics: 'Autonomous • Real-time multimodal',
-    color: 'from-violet-500 to-indigo-500',
-    accent: '#a99cff',
+      'Generic beauty advice ignores your skin, your tone, your needs. BeautyCare AI delivers personalised consultations through text, images, and voice — like having a beauty specialist available 24/7.',
+    tech: ['Next.js', 'Gemini', 'TypeScript', 'Tailwind CSS', 'Web Speech API'],
+    metrics: 'Multimodal AI • Audio + Visual consultations',
+    color: 'from-rose-500 to-pink-500',
+    accent: '#ff8ba7',
     featured: true,
-    previewUrl: 'https://playground.hyperlambda.dev/',
-    gitUrl: '',
+    gitUrl: 'https://github.com/EbubeEvan/Beauty-Care-AI',
+    previewUrl: 'https://beauty-care-ai.vercel.app/',
     challenge:
-      'Building an agent that could autonomously execute multi-step dev workflows — not just respond — while keeping the interface responsive during long-running tasks.',
+      'Moving beyond generic AI responses to deliver beauty advice that accounts for individual skin tone, type, and concerns — while supporting both visual analysis and voice-based interaction.',
     solution:
-      'Designed an event-driven pipeline with real-time WebSocket feedback, allowing the agent to stream progress updates and intermediate outputs back to the user as each step completed.',
+      'Integrated a multimodal AI pipeline that analyses user-submitted images and text inputs alongside audio input via speech-to-text, enabling hands-free consultations and generating contextual, personalised product and routine recommendations.',
     outcome:
-      'Delivered a working autonomous dev agent capable of scaffolding, writing, and deploying full-stack projects end-to-end through a single chat interface.',
+      'Delivered an AI beauty consultant that responds to what it sees and hears — giving personalised advice through text or voice that generic chatbots cannot replicate.',
     fullDescription:
-      'The AI Expert System goes beyond conversational AI — it is an autonomous agent that executes real development tasks. Users interact through a multimodal chat interface while the agent handles everything from repository setup to deployment.',
-    images: [aiMain, aiDiagram, aiToolCall],
+      'BeautyCare AI is a multimodal beauty consultation tool powered by AI. It analyses images, text, and voice input to understand a user\'s unique skin profile and deliver tailored advice through text or voice output — available on demand.',
+    images: [beautyMain, beautyChatDark, beautyChatLight],
   },
 ];
