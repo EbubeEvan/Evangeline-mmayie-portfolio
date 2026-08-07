@@ -30,7 +30,7 @@ import lyfterSelect from '@/assets/projects/lyfter/ride-select.jpg';
 
 export const PROJECTS: Project[] = [
   {
-    id: '3',
+    id: '1',
     title: 'Laferla Website',
     category: ['Web'],
     description:
@@ -53,7 +53,7 @@ export const PROJECTS: Project[] = [
     images: [laferlaSiteMain, laferlaSiteAbout, laferlaSiteTravel],
   },
   {
-    id: '4',
+    id: '2',
     title: 'Laferla Insurance Mobile App',
     category: ['Mobile'],
     description:
@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
     images: [laferlaMobileMain, laferlaMobileHand, laferlaMobilePowerful],
   },
   {
-    id: '5',
+    id: '3',
     title: 'Laferla Insurance Web App',
     category: ['Web'],
     description:
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
     images: [laferlaWebMain, laferlaWebBuy, laferlaWebProfile],
   },
   {
-    id: '7',
+    id: '4',
     title: 'AI Expert System',
     category: ['Web', 'AI'],
     description:
@@ -120,7 +120,7 @@ export const PROJECTS: Project[] = [
     images: [aiMain, aiDiagram, aiToolCall],
   },
   {
-    id: '6',
+    id: '5',
     title: 'Lyfter',
     category: ['Mobile'],
     description:
@@ -142,7 +142,7 @@ export const PROJECTS: Project[] = [
     images: [lyfterBanner, lyfterDetails, lyfterSelect],
   },
   {
-    id: '1',
+    id: '6',
     title: 'Voltx',
     category: ['Web'],
     description:
@@ -164,7 +164,7 @@ export const PROJECTS: Project[] = [
     images: [voltxMain, voltxDetails, voltxProducts],
   },
   {
-    id: '2',
+    id: '7',
     title: 'BeautyCare AI',
     category: ['Web', 'AI'],
     description:
