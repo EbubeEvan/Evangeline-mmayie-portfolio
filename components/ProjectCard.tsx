@@ -12,8 +12,8 @@ export const ProjectCard = ({ project, index, active = false }: { project: Proje
     <Link href={`/work/${project.id}`} className="group block py-14 md:py-24">
       <motion.article animate={{ opacity: active ? 1 : 0.46 }} transition={{ duration: 0.35 }}>
         {project.images?.[0] ? (
-          <div className="relative mb-8 aspect-[16/10] overflow-hidden border border-[var(--line)] lg:hidden">
-            <Image src={project.images[0]} alt={`${project.title} interface`} fill sizes="100vw" className="object-cover" />
+          <div className="relative mb-8 aspect-[16/9] overflow-hidden border border-[var(--line)] lg:hidden">
+            <Image src={project.images[0]} alt={`${project.title} interface`} fill sizes="100vw" className="object-contain" />
           </div>
         ) : null}
 

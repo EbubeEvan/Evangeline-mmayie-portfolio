@@ -50,7 +50,7 @@ export const ProjectGallery = ({ images, title }: { images: GalleryImage[]; titl
               triggerRef.current = event.currentTarget;
               setActiveIndex(index);
             }}
-            className="group relative aspect-[16/10] overflow-hidden border border-[var(--line)] bg-[#0a0d0c] text-left"
+            className="group relative aspect-[16/9] overflow-hidden border border-[var(--line)] bg-[#0a0d0c] text-left"
             aria-label={`Expand ${title} interface view ${index + 1}`}
           >
             <Image src={image} alt={`${title} interface view ${index + 1}`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.02]" />
