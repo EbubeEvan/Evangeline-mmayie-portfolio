@@ -127,8 +127,8 @@ export const PROJECTS: Project[] = [
       'Booking a ride should be instant and transparent. Lyfter connects passengers with drivers in real-time, with live route tracking and upfront distance calculations built in.',
     tech: ['React Native', 'Expo', 'Maps API', 'Real-time'],
     metrics: 'Live tracking • Real-time matching',
-    color: 'from-amber-500 to-orange-500',
-    accent: '#ffbd59',
+    color: 'from-emerald-500 to-lime-500',
+    accent: '#8bf2a8',
     gitUrl: 'https://github.com/EbubeEvan/Lyfter',
     previewUrl: 'https://expo.dev/artifacts/eas/wPs2Hmyg6gRfuqbrDCME3E.apk',
     challenge:
@@ -149,8 +149,8 @@ export const PROJECTS: Project[] = [
       'Shopping for gadgets should feel as polished as the products themselves. Voltx is an online store built to make discovery, comparison, and checkout feel effortless from first click to final purchase.',
     tech: ['Tanstack Start', 'TypeScript', 'Tailwind CSS', 'E-commerce UI', 'Checkout Flow'],
     metrics: 'Commerce-ready • Product discovery',
-    color: 'from-emerald-500 to-lime-500',
-    accent: '#8bf2a8',
+    color: 'from-cyan-500 to-teal-500',
+    accent: '#20d4aa',
     featured: true,
     previewUrl: 'https://voltx-tech.vercel.app/',
     challenge:
