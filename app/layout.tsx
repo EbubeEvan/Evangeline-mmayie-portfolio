@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
+import { JsonLd } from "@/components/JsonLd";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -16,10 +17,10 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://evangeline-mmayie.vercel.app"),
   title: "Evangeline Mmayie | Software Engineer",
-  description: "Portfolio of a creative software engineer specialized in web and mobile development",
+  description: "Engineering high-performance web, mobile, and AI products.",
   openGraph: {
     title: "Evangeline Mmayie | Software Engineer",
-    description: "Portfolio of a creative software engineer specialized in web and mobile development",
+    description: "Engineering high-performance web, mobile, and AI products.",
     url: "https://evangeline-mmayie.vercel.app",
     siteName: "Evangeline Mmayie",
     type: "website",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Evangeline Mmayie | Software Engineer",
-    description: "Portfolio of a creative software engineer specialized in web and mobile development",
+    description: "Engineering high-performance web, mobile, and AI products.",
   },
 };
 
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} antialiased overflow-x-hidden`}
       >
+        <JsonLd />
         {children}
       </body>
     </html>

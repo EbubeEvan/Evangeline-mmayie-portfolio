@@ -19,7 +19,7 @@ export const Reviews = () => {
         <div className="border-b border-[var(--line)]">
           {REVIEWS.map((review, i) => {
             const avatarContent = review.avatar ? (
-              <Image src={review.avatar} alt="" fill sizes="64px" className="object-cover" />
+              <Image src={review.avatar} alt={review.name} fill sizes="64px" className="object-cover" />
             ) : (
               review.name.charAt(0)
             );
