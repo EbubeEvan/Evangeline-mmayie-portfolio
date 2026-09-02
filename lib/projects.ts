@@ -131,8 +131,8 @@ export const PROJECTS: Project[] = [
       "Campus transportation shouldn't require cash or queues. Weyz Rider lets students tap to board, pay cashlessly via QR or virtual card, and track their rides — making campus mobility fast and frictionless.",
     tech: ['React Native', 'TypeScript', 'NFC', 'QR Payments', 'Google Maps'],
     metrics: 'Cashless campus transit • Tap & go payments',
-    color: 'from-blue-600 to-indigo-600',
-    accent: '#1e40af',
+    color: 'from-blue-500 to-indigo-500',
+    accent: '#3b82f6',
     previewUrl: 'https://play.google.com/store/apps/details?id=com.weyzmobility.riders&hl=en',
     gitUrl: '',
     challenge:
@@ -153,8 +153,8 @@ export const PROJECTS: Project[] = [
       "Managing shift data and passenger tracking shouldn't slow drivers down. Weyz Driver gives drivers real-time navigation, earnings tracking, and commuter management — all in one place.",
     tech: ['React Native', 'TypeScript', 'NFC', 'QR Payments', 'Navigation APIs'],
     metrics: 'Real-time navigation • Shift & earnings tracking',
-    color: 'from-indigo-600 to-blue-700',
-    accent: '#3730a3',
+    color: 'from-indigo-500 to-blue-600',
+    accent: '#6366f1',
     previewUrl: 'https://play.google.com/store/apps/details?id=com.weyzmobility.driver&hl=en',
     gitUrl: '',
     challenge:
