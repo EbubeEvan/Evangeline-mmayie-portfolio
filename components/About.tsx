@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 
 export const About = () => {
   const stats = [
-    { label: 'Years in production', value: '4+' },
+    { label: 'Years in production', value: '5' },
     { label: 'Projects delivered', value: '20+' },
     { label: 'Client partnerships', value: '15+' },
     { label: 'Primary platforms', value: 'Web / Mobile' },
