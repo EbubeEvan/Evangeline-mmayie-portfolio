@@ -24,9 +24,13 @@ import laferlaWebMain from '@/assets/projects/laferla-web-app/main.png';
 import laferlaWebBuy from '@/assets/projects/laferla-web-app/buy-insurance.png';
 import laferlaWebProfile from '@/assets/projects/laferla-web-app/profile.png';
 
-import lyfterBanner from '@/assets/projects/lyfter/lyfter_advertisement_banner.png';
-import lyfterDetails from '@/assets/projects/lyfter/ride-details.jpg';
-import lyfterSelect from '@/assets/projects/lyfter/ride-select.jpg';
+import weyzRiderMain from '@/assets/projects/weyz-rider/main.png';
+import weyzRiderHome from '@/assets/projects/weyz-rider/home.png';
+import weyzRiderCard from '@/assets/projects/weyz-rider/card-payment.jpeg';
+
+import weyzDriverMain from '@/assets/projects/weyz-driver/main.png';
+import weyzDriverNav from '@/assets/projects/weyz-driver/navigation.jpeg';
+import weyzDriverShift from '@/assets/projects/weyz-driver/shift-summary.jpeg';
 
 export const PROJECTS: Project[] = [
   {
@@ -121,28 +125,50 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '5',
-    title: 'Lyfter',
+    title: 'Weyz Rider',
     category: ['Mobile'],
     description:
-      'Booking a ride should be instant and transparent. Lyfter connects passengers with drivers in real-time, with live route tracking and upfront distance calculations built in.',
-    tech: ['React Native', 'Expo', 'Maps API', 'Real-time'],
-    metrics: 'Live tracking • Real-time matching',
-    color: 'from-emerald-500 to-lime-500',
-    accent: '#8bf2a8',
-    gitUrl: 'https://github.com/EbubeEvan/Lyfter',
-    previewUrl: 'https://expo.dev/artifacts/eas/wPs2Hmyg6gRfuqbrDCME3E.apk',
+      "Campus transportation shouldn't require cash or queues. Weyz Rider lets students tap to board, pay cashlessly via QR or virtual card, and track their rides — making campus mobility fast and frictionless.",
+    tech: ['React Native', 'TypeScript', 'NFC', 'QR Payments', 'Google Maps'],
+    metrics: 'Cashless campus transit • Tap & go payments',
+    color: 'from-blue-600 to-indigo-600',
+    accent: '#1e40af',
+    previewUrl: 'https://play.google.com/store/apps/details?id=com.weyzmobility.riders&hl=en',
+    gitUrl: '',
     challenge:
-      'Implementing real-time driver-passenger matching with live map tracking on a cross-platform mobile stack without sacrificing performance.',
+      'Building a cashless transit system that works seamlessly across campus — handling real-time payments, NFC taps, and QR scans without adding friction to the boarding experience.',
     solution:
-      'Used WebSocket-based location syncing and integrated a maps SDK for live route rendering, with upfront fare estimation calculated from distance data.',
+      'Designed a lightweight mobile UX with multiple payment options (NFC, QR, virtual card) and a wallet system, enabling students to tap and go without delays.',
     outcome:
-      'A fully functional ride-hailing prototype with real-time tracking, instant booking, and transparent distance-based pricing.',
+      'Delivered a campus mobility app that replaces cash-based transit with instant, contactless payments — reducing boarding time and eliminating fare handling.',
     fullDescription:
-      'Lyfter is a ride-hailing mobile app built with React Native and Expo. It supports real-time driver matching, live GPS route tracking, and upfront distance-based fare calculations.',
-    images: [lyfterBanner, lyfterDetails, lyfterSelect],
+      "Weyz Rider is a campus transportation app that enables students to move around campus cashless. It supports tap-to-pay via NFC, QR code scanning, and virtual card payments, with a built-in wallet for managing balances and tracking ride history.",
+    images: [weyzRiderMain, weyzRiderHome, weyzRiderCard],
   },
   {
     id: '6',
+    title: 'Weyz Driver',
+    category: ['Mobile'],
+    description:
+      "Managing shift data and passenger tracking shouldn't slow drivers down. Weyz Driver gives drivers real-time navigation, earnings tracking, and commuter management — all in one place.",
+    tech: ['React Native', 'TypeScript', 'NFC', 'QR Payments', 'Navigation APIs'],
+    metrics: 'Real-time navigation • Shift & earnings tracking',
+    color: 'from-indigo-600 to-blue-700',
+    accent: '#3730a3',
+    previewUrl: 'https://play.google.com/store/apps/details?id=com.weyzmobility.driver&hl=en',
+    gitUrl: '',
+    challenge:
+      'Equipping drivers with the tools they need to manage routes, track commuters, and monitor earnings — without juggling multiple apps or manual logs.',
+    solution:
+      'Built a driver companion app with integrated navigation, real-time commuter scanning (NFC/QR), and automatic shift and earnings summaries.',
+    outcome:
+      'Drivers can now manage their entire shift from one app — navigating routes, scanning commuters, and tracking daily earnings in real time.',
+    fullDescription:
+      "Weyz Driver is the companion app for Weyz campus transit drivers. It provides real-time route navigation, commuter scanning via NFC or QR, shift tracking, and earnings summaries — giving drivers everything they need in a single interface.",
+    images: [weyzDriverMain, weyzDriverNav, weyzDriverShift],
+  },
+  {
+    id: '7',
     title: 'Voltx',
     category: ['Web'],
     description:
@@ -164,7 +190,7 @@ export const PROJECTS: Project[] = [
     images: [voltxMain, voltxDetails, voltxProducts],
   },
   {
-    id: '7',
+    id: '8',
     title: 'BeautyCare AI',
     category: ['Web', 'AI'],
     description:
