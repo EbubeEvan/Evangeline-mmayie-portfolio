@@ -160,7 +160,7 @@ export const PROJECTS: Project[] = [
     challenge:
       'Equipping drivers with the tools they need to manage routes, track commuters, and monitor earnings — without juggling multiple apps or manual logs.',
     solution:
-      'Built a driver companion app with integrated navigation, real-time commuter scanning (NFC/QR), and automatic shift and earnings summaries.',
+      'Built a driver companion app with integrated navigation, real-time commuter scanning (NFC/QR), and automatic shift and earnings summaries, as well as payout integration.',
     outcome:
       'Drivers can now manage their entire shift from one app — navigating routes, scanning commuters, and tracking daily earnings in real time.',
     fullDescription:
