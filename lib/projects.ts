@@ -129,7 +129,7 @@ export const PROJECTS: Project[] = [
     category: ['Mobile'],
     description:
       "Campus transportation shouldn't require cash or queues. Weyz Rider lets students tap to board, pay cashlessly via QR or virtual card, and track their rides — making campus mobility fast and frictionless.",
-    tech: ['React Native', 'TypeScript', 'NFC', 'QR Payments', 'Google Maps'],
+    tech: ['React Native' , 'TypeScript' , 'Nestjs' , 'PostgreSQL' , 'Paystack' , 'KYC' , 'NFC' , 'QR' , 'Google Maps'],
     metrics: 'Cashless campus transit • Tap & go payments',
     color: 'from-blue-500 to-indigo-500',
     accent: '#3b82f6',
@@ -151,7 +151,7 @@ export const PROJECTS: Project[] = [
     category: ['Mobile'],
     description:
       "Managing shift data and passenger tracking shouldn't slow drivers down. Weyz Driver gives drivers real-time navigation, earnings tracking, and commuter management — all in one place.",
-    tech: ['React Native', 'TypeScript', 'NFC', 'QR Payments', 'Navigation APIs'],
+    tech: ['React Native' , 'TypeScript' , 'Nestjs' , 'PostgreSQL' , 'Paystack' , 'KYC' , 'NFC' , 'QR' , 'Google Maps'],
     metrics: 'Real-time navigation • Shift & earnings tracking',
     color: 'from-indigo-500 to-blue-600',
     accent: '#6366f1',
