@@ -64,13 +64,13 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
 
               <div className="mt-10 flex flex-wrap gap-3">
                 {project.previewUrl ? (
-                  <a href={project.previewUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#b45309] px-6 text-sm font-semibold text-[#faf4ee] transition-colors hover:bg-[#3e1a0a]">
-                    View live <ArrowUpRight className="h-4 w-4" />
+                  <a href={project.previewUrl} target="_blank" rel="noreferrer" className="group inline-flex min-h-12 items-center gap-2 rounded-full bg-[#b45309] px-6 text-sm font-semibold text-[#faf4ee] transition-colors hover:bg-[#3e1a0a]">
+                    View live <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </a>
                 ) : null}
                 {project.gitUrl ? (
-                  <a href={project.gitUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[rgba(62,26,10,0.15)] bg-[#faf4ee] px-6 text-sm font-semibold text-[#3e1a0a] transition-colors hover:border-[#b45309] hover:text-[#b45309]">
-                    View source <ArrowUpRight className="h-4 w-4" />
+                  <a href={project.gitUrl} target="_blank" rel="noreferrer" className="group inline-flex min-h-12 items-center gap-2 rounded-full border border-[rgba(62,26,10,0.15)] bg-[#faf4ee] px-6 text-sm font-semibold text-[#3e1a0a] transition-colors hover:border-[#b45309] hover:text-[#b45309]">
+                    View source <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </a>
                 ) : null}
               </div>
@@ -139,8 +139,8 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
               <p className="font-mono text-[0.75rem] uppercase tracking-[0.12em] text-[#b45309]">End of case file</p>
               <h2 className="mt-4 text-3xl font-semibold text-[#3e1a0a] md:text-5xl">Explore the next work.</h2>
             </div>
-            <Link href="/#work" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#b45309] px-6 text-sm font-semibold text-[#faf4ee] transition-colors hover:bg-[#3e1a0a]">
-              Return to work <ArrowUpRight className="h-4 w-4" />
+            <Link href="/#work" className="group inline-flex min-h-12 items-center gap-2 rounded-full bg-[#b45309] px-6 text-sm font-semibold text-[#faf4ee] transition-colors hover:bg-[#3e1a0a]">
+              Return to work <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Link>
           </div>
         </section>

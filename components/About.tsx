@@ -56,20 +56,25 @@ export const About = () => {
         </div>
 
         <div className="mx-auto mt-20 grid max-w-[68rem] grid-cols-2 gap-4 lg:max-w-[60rem] lg:grid-cols-4 xl:max-w-[64rem] 2xl:max-w-[68rem]">
-          {stats.map((stat, i) => (
+          {stats.map((stat, i) => {
+            const isLong = stat.value.includes('/');
+            return (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="min-h-36 rounded-[24px] border border-[rgba(62,26,10,0.06)] bg-[#faf4ee] p-6 md:min-h-44 md:p-7"
+              className="flex min-h-36 flex-col rounded-[24px] border border-[rgba(62,26,10,0.06)] bg-[#faf4ee] p-6 md:min-h-44 md:p-7"
             >
               <div className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-[#8d6b4f]">— 0{i + 1}</div>
-              <div className="mt-8 font-serif text-3xl font-semibold text-[#b45309] md:text-[2rem]">{stat.value}</div>
+              <div className="mt-6 flex min-h-[2.2rem] items-center md:mt-8 md:min-h-[2.5rem]">
+                <div className={`font-serif font-semibold leading-none tracking-tight text-[#b45309] ${isLong ? 'whitespace-nowrap text-[1.25rem] sm:text-[1.4rem] md:text-[1.25rem] lg:text-[1.15rem] xl:text-[1.35rem]' : 'text-3xl md:text-[2rem]'}`}>{stat.value}</div>
+              </div>
               <div className="mt-2 text-xs leading-relaxed text-[#8d6b4f]">{stat.label}</div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </ParallaxSection>
     </section>

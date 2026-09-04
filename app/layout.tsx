@@ -28,11 +28,20 @@ export const metadata: Metadata = {
     siteName: "Evangeline Mmayie",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Evangeline Mmayie — Software Engineer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Evangeline Mmayie | Software Engineer",
     description: "Engineering high-performance web, mobile, and AI products.",
+    images: ["/opengraph-image.jpg"],
   },
 };
 
