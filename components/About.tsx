@@ -32,7 +32,7 @@ export const About = () => {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[40px] border border-[#b45309]/12 bg-[#faf4ee] shadow-[0_16px_48px_rgba(62,26,10,0.09)]">
               <Image src={evanPortrait} alt="Evangeline Mmayie portrait" fill sizes="(max-width: 768px) 85vw, 480px" className="object-cover object-top" priority />
             </div>
-            <p className="mt-4 font-serif text-sm italic leading-relaxed text-[#8d6b4f]">Evangeline Mmayie — Engineering with warmth, shipped with precision.</p>
+            <p className="mt-4 font-serif text-sm italic leading-relaxed text-[#8d6b4f]">Evangeline Mmayie — Engineering with clarity, shipped with precision.</p>
           </motion.div>
 
           <motion.div
@@ -43,7 +43,7 @@ export const About = () => {
             className="w-full lg:pt-[28px]"
           >
             <h2 className="w-full text-balance text-[clamp(2.4rem,5vw,5.2rem)] font-semibold leading-[0.96] tracking-[-0.02em] text-[#3e1a0a]">
-              Precision in the craft. <span className="font-light italic text-[#b45309]">Warmth in the experience.</span>
+              Precision in the craft. <span className="font-light italic text-[#b45309]">Clarity in the experience.</span>
             </h2>
             <div className="mt-10 grid w-full gap-6 text-balance text-base leading-[1.7] text-[#6d4a32] md:text-lg">
               <p className="max-w-[46ch]">I build high-performance web and mobile applications with a focus on scalability, maintainability, and business outcomes.</p>

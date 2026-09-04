@@ -46,7 +46,7 @@ export const Skills = () => {
             <p className="system-label system-label--on-orange mb-5">Craft & Stack</p>
             <h2 className="text-[clamp(3rem,7vw,7rem)] font-semibold leading-[0.88] tracking-[-0.02em] text-[#faf4ee]">Tools, at harvest.</h2>
           </div>
-          <p className="max-w-lg text-base leading-relaxed text-[#faf4ee]/85 lg:justify-self-end md:text-lg">A warm, curated stack for resilient interfaces, real-time products, and refined delivery.</p>
+          <p className="max-w-lg text-base leading-relaxed text-[#faf4ee]/85 lg:justify-self-end md:text-lg">A clear, curated stack for resilient interfaces, real-time products, and refined delivery.</p>
         </div>
 
         {/* Desktop vines infinity - full bleed, no crop */}

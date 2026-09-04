@@ -106,7 +106,7 @@ export const PROJECTS: Project[] = [
     category: ['Web', 'AI'],
     description:
       'Most AI chatbots can only talk. The AI Expert System is an autonomous agent that acts — completing dev tasks like setting up GitHub repos, writing code, and deploying full-stack projects through a real-time multimodal chat interface.',
-    tech: ['React', 'Node.js', 'OpenAI', 'WebSockets'],
+    tech: ['React', 'Node.js', 'OpenAI', 'WebSockets', 'PostgreSQL'],
     metrics: 'Autonomous • Real-time multimodal',
     color: 'from-violet-500 to-indigo-500',
     accent: '#b45309',
@@ -195,7 +195,7 @@ export const PROJECTS: Project[] = [
     category: ['Web', 'AI'],
     description:
       'Generic beauty advice ignores your skin, your tone, your needs. BeautyCare AI delivers personalised consultations through text, images, and voice — like having a beauty specialist available 24/7.',
-    tech: ['Next.js', 'Gemini', 'TypeScript', 'Tailwind CSS', 'Web Speech API'],
+    tech: ['Next.js', 'Gemini', 'TypeScript', 'Tailwind CSS', 'Web Speech API', 'MongoDB'],
     metrics: 'Multimodal AI • Audio + Visual consultations',
     color: 'from-rose-500 to-pink-500',
     accent: '#C25A1E',

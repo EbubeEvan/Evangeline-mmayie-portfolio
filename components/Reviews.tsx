@@ -14,7 +14,7 @@ export const Reviews = () => {
             <p className="system-label mb-5">Client Reflections</p>
             <h2 className="text-[clamp(3rem,7vw,7rem)] font-semibold leading-[0.88] tracking-[-0.02em] text-[#3e1a0a]">Proof, gathered.</h2>
           </div>
-          <p className="max-w-lg text-base leading-relaxed text-[#6d4a32] lg:justify-self-end md:text-lg">Direct feedback from product leaders and engineers after warm, considered systems reached production.</p>
+          <p className="max-w-lg text-base leading-relaxed text-[#6d4a32] lg:justify-self-end md:text-lg">Direct feedback from product leaders and engineers after systems built for clarity reached production.</p>
         </div>
 
         <div className="rounded-[24px] border border-[rgba(62,26,10,0.08)] bg-[#faf4ee] p-6 md:p-8 lg:p-10">
