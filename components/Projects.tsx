@@ -50,7 +50,7 @@ export const Projects = () => {
       <ParallaxSection className="section-shell py-20 md:py-28">
         <div className="grid gap-8 border-b border-[#faf4ee]/20 pb-10 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
-            <p className="system-label system-label--on-orange mb-5">Selected Works</p>
+            <p className="system-label system-label--on-orange mb-5 !text-[#faf4ee] [&::before]:!bg-[#faf4ee] [&::before]:!shadow-[0_0_0.7rem_rgba(250,244,238,0.6)]">Selected Works</p>
             <h2 className="text-balance text-[clamp(3rem,7vw,7rem)] font-semibold leading-[0.88] tracking-[-0.02em] text-[#faf4ee]">Work in motion.</h2>
           </div>
           <fieldset className="flex flex-wrap gap-2">

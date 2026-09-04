@@ -41,7 +41,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Evangeline Mmayie | Software Engineer",
     description: "Engineering high-performance web, mobile, and AI products.",
-    images: ["/opengraph-image.jpg"],
+    images: [
+      {
+        url: "https://evangeline-mmayie.vercel.app/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Evangeline Mmayie — Software Engineer",
+      },
+    ],
   },
 };
 

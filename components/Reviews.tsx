@@ -11,7 +11,7 @@ export const Reviews = () => {
       <ParallaxSection className="section-shell">
         <div className="mb-16 grid gap-8 lg:grid-cols-2 lg:items-end">
           <div>
-            <p className="system-label mb-5">Client Reflections</p>
+            <p className="system-label mb-5 !text-[#8d6b4f] [&::before]:!bg-[#b45309] [&::before]:!shadow-[0_0_0.7rem_rgba(180,83,9,0.38)]">Client Reflections</p>
             <h2 className="text-[clamp(3rem,7vw,7rem)] font-semibold leading-[0.88] tracking-[-0.02em] text-[#3e1a0a]">Proof, gathered.</h2>
           </div>
           <p className="max-w-lg text-base leading-relaxed text-[#6d4a32] lg:justify-self-end md:text-lg">Direct feedback from product leaders and engineers after systems built for clarity reached production.</p>

@@ -55,7 +55,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
 
             <div className="max-w-5xl py-10">
               <div className="mb-7 flex flex-wrap items-center gap-3 font-mono text-[0.75rem] uppercase tracking-[0.14em] text-[#b45309]">
-                <span>Case file / {project.id.padStart(2, '0')}</span>
+                <span>Case study / {project.id.padStart(2, '0')}</span>
                 <span className="text-[#8d6b4f]">•</span>
                 <span>{categories.join(' + ')}</span>
               </div>
@@ -77,10 +77,10 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
             </div>
 
             <div className="grid grid-cols-2 gap-4 border-t border-[rgba(62,26,10,0.08)] pt-5 font-mono text-[0.70rem] uppercase tracking-[0.12em] text-[#8d6b4f] md:grid-cols-4">
-              <span>Archive / 2026</span>
+              <span>Collection / 2026</span>
               <span>{categories.join(' / ')}</span>
               <span className="hidden md:block">Status / Deployed</span>
-              <span className="text-right text-[#b45309]">Case active</span>
+              <span className="text-right text-[#b45309]">Case live</span>
             </div>
           </div>
         </section>
@@ -88,7 +88,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
         <section className="border-b border-[rgba(62,26,10,0.08)] bg-[#faf4ee] py-14 md:py-20">
           <div className="section-shell grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
             <div>
-              <p className="system-label">Project detail</p>
+              <p className="system-label !text-[#8d6b4f] [&::before]:!bg-[#b45309] [&::before]:!shadow-[0_0_0.7rem_rgba(180,83,9,0.38)]">Project detail</p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="rounded-[20px] border border-[rgba(62,26,10,0.08)] bg-[#f7ede0] p-6">
@@ -123,7 +123,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
             <div className="section-shell">
               <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
                 <div>
-                  <p className="system-label mb-5">Interface archive</p>
+                  <p className="system-label mb-5 !text-[#8d6b4f] [&::before]:!bg-[#b45309] [&::before]:!shadow-[0_0_0.7rem_rgba(180,83,9,0.38)]">Interface collection</p>
                   <h2 className="text-[clamp(2.8rem,6vw,6rem)] font-semibold leading-[0.9] tracking-[-0.02em] text-[#3e1a0a]">System views.</h2>
                 </div>
                 <p className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[#8d6b4f]">Select to inspect</p>
@@ -136,7 +136,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
         <section className="bg-[#f7ede0] py-16 md:py-20">
           <div className="section-shell flex flex-col items-start justify-between gap-10 rounded-[24px] border border-[rgba(62,26,10,0.08)] bg-[#faf4ee] px-6 py-8 md:flex-row md:items-center md:px-10">
             <div>
-              <p className="font-mono text-[0.75rem] uppercase tracking-[0.12em] text-[#b45309]">End of case file</p>
+              <p className="font-mono text-[0.75rem] uppercase tracking-[0.12em] text-[#b45309]">End of case study</p>
               <h2 className="mt-4 text-3xl font-semibold text-[#3e1a0a] md:text-5xl">Explore the next work.</h2>
             </div>
             <Link href="/#work" className="group inline-flex min-h-12 items-center gap-2 rounded-full bg-[#b45309] px-6 text-sm font-semibold text-[#faf4ee] transition-colors hover:bg-[#3e1a0a]">
