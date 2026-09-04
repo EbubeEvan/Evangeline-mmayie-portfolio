@@ -37,110 +37,109 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-[#050706] text-[#e9f2ed]">
+    <div className="min-h-screen bg-[#f7ede0] text-[#3e1a0a]">
       <Navigation />
 
       <main>
-        <section className="relative min-h-[100svh] overflow-hidden border-b border-[var(--line)]">
+        <section className="relative min-h-[86svh] overflow-hidden border-b border-[rgba(62,26,10,0.08)]">
           {project.images?.[0] ? (
             <Image src={project.images[0]} alt={`${project.title} product interface`} fill priority sizes="100vw" className="object-cover" />
           ) : null}
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,6,0.98)_0%,rgba(5,7,6,0.86)_42%,rgba(5,7,6,0.18)_100%)]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050706] via-transparent to-[#050706]/50" />
-          <div className="command-grid absolute inset-0 opacity-20" aria-hidden="true" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,244,238,0.96)_0%,rgba(250,244,238,0.86)_42%,rgba(250,244,238,0.18)_100%)]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#f7ede0] via-transparent to-[#faf4ee]/40" />
 
-          <div className="section-shell relative z-10 flex min-h-[100svh] flex-col justify-between pb-8 pt-28 md:pb-10 md:pt-36">
-            <Link href="/#work" className="inline-flex w-fit items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[#9aa59f] transition-colors hover:text-[#9dffb4]">
-              <ArrowLeft className="h-4 w-4" /> Back to archive
+          <div className="section-shell relative z-10 flex min-h-[86svh] flex-col justify-between pb-6 pt-24 md:pb-8 md:pt-28">
+            <Link href="/#work" className="inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(62,26,10,0.12)] bg-[#faf4ee] px-5 py-2.5 font-mono text-[0.75rem] uppercase tracking-[0.12em] text-[#6d4a32] transition-colors hover:border-[#b45309] hover:text-[#b45309]">
+              <ArrowLeft className="h-4 w-4" /> Back to works
             </Link>
 
-            <div className="max-w-5xl py-16">
-              <div className="mb-7 flex flex-wrap items-center gap-3 font-mono text-[0.65rem] uppercase tracking-[0.14em]" style={{ color: project.accent }}>
+            <div className="max-w-5xl py-10">
+              <div className="mb-7 flex flex-wrap items-center gap-3 font-mono text-[0.75rem] uppercase tracking-[0.14em] text-[#b45309]">
                 <span>Case file / {project.id.padStart(2, '0')}</span>
-                <span className="text-[#56615b]">•</span>
+                <span className="text-[#8d6b4f]">•</span>
                 <span>{categories.join(' + ')}</span>
               </div>
-              <h1 className="text-balance text-[clamp(3.7rem,10vw,10rem)] font-medium leading-[0.82] text-white">{project.title}</h1>
-              <p className="mt-9 max-w-2xl text-base leading-relaxed text-[#b0bbb5] md:text-xl">{project.fullDescription || project.description}</p>
+              <h1 className="text-balance text-[clamp(3.2rem,9vw,8.5rem)] font-semibold leading-[0.88] tracking-[-0.02em] text-[#3e1a0a]">{project.title}</h1>
+              <p className="mt-9 max-w-2xl text-lg leading-relaxed text-[#6d4a32] md:text-[1.35rem]">{project.fullDescription || project.description}</p>
 
               <div className="mt-10 flex flex-wrap gap-3">
                 {project.previewUrl ? (
-                  <a href={project.previewUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-2 px-5 text-sm font-semibold text-[#031008] transition-colors hover:bg-white" style={{ backgroundColor: project.accent }}>
+                  <a href={project.previewUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#b45309] px-6 text-sm font-semibold text-[#faf4ee] transition-colors hover:bg-[#3e1a0a]">
                     View live <ArrowUpRight className="h-4 w-4" />
                   </a>
                 ) : null}
                 {project.gitUrl ? (
-                  <a href={project.gitUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-2 border border-white/25 px-5 text-sm font-semibold text-white transition-colors hover:border-white">
+                  <a href={project.gitUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[rgba(62,26,10,0.15)] bg-[#faf4ee] px-6 text-sm font-semibold text-[#3e1a0a] transition-colors hover:border-[#b45309] hover:text-[#b45309]">
                     View source <ArrowUpRight className="h-4 w-4" />
                   </a>
                 ) : null}
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 border-t border-white/15 pt-5 font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#8e9993] md:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 border-t border-[rgba(62,26,10,0.08)] pt-5 font-mono text-[0.70rem] uppercase tracking-[0.12em] text-[#8d6b4f] md:grid-cols-4">
               <span>Archive / 2026</span>
               <span>{categories.join(' / ')}</span>
               <span className="hidden md:block">Status / Deployed</span>
-              <span className="text-right" style={{ color: project.accent }}>Case active</span>
+              <span className="text-right text-[#b45309]">Case active</span>
             </div>
           </div>
         </section>
 
-        <section className="border-b border-[var(--line)] bg-[#0a0d0c] py-20 md:py-28">
-          <div className="section-shell grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+        <section className="border-b border-[rgba(62,26,10,0.08)] bg-[#faf4ee] py-14 md:py-20">
+          <div className="section-shell grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
             <div>
-              <p className="system-label">Mission telemetry</p>
+              <p className="system-label">Project detail</p>
             </div>
-            <div className="grid gap-px border border-[var(--line)] bg-[var(--line)] sm:grid-cols-2">
-              <div className="bg-[#0a0d0c] p-6">
-                <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#647069]">Outcome signal</p>
-                <p className="mt-5 text-xl leading-snug" style={{ color: project.accent }}>{project.metrics}</p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-[20px] border border-[rgba(62,26,10,0.08)] bg-[#f7ede0] p-6">
+                <p className="font-mono text-[0.70rem] uppercase tracking-[0.12em] text-[#8d6b4f]">Outcome</p>
+                <p className="mt-5 text-[1.7rem] leading-snug text-[#b45309]">{project.metrics}</p>
               </div>
-              <div className="bg-[#0a0d0c] p-6">
-                <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#647069]">Technology</p>
-                <p className="mt-5 text-sm leading-relaxed text-[#b0bbb5]">{project.tech.join(' / ')}</p>
+              <div className="rounded-[20px] border border-[rgba(62,26,10,0.08)] bg-[#f7ede0] p-6">
+                <p className="font-mono text-[0.70rem] uppercase tracking-[0.12em] text-[#8d6b4f]">Technology</p>
+                <p className="mt-5 text-[0.95rem] leading-relaxed text-[#6d4a32]">{project.tech.join(' / ')}</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-[#050706] py-24 md:py-36">
+        <section className="bg-[#f7ede0] py-16 md:py-24">
           <div className="section-shell">
             {chapters.map((chapter) => (
-              <article key={chapter.number} className="grid gap-8 border-t border-[var(--line)] py-12 lg:grid-cols-[0.45fr_0.75fr_1.3fr] lg:gap-16 lg:py-20">
-                <span className="font-mono text-xs" style={{ color: project.accent }}>{chapter.number}</span>
+              <article key={chapter.number} className="grid gap-6 border-t border-[rgba(62,26,10,0.08)] py-8 lg:grid-cols-[0.45fr_0.75fr_1.3fr] lg:gap-12 lg:py-14">
+                <span className="font-mono text-sm text-[#b45309]">{chapter.number}</span>
                 <div>
-                  <p className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-[#647069]">{chapter.label}</p>
-                  <h2 className="mt-4 text-3xl font-medium text-[#e9f2ed]">{chapter.title}</h2>
+                  <p className="font-mono text-[0.70rem] uppercase tracking-[0.14em] text-[#8d6b4f]">{chapter.label}</p>
+                  <h2 className="mt-4 text-[2.1rem] font-semibold text-[#3e1a0a]">{chapter.title}</h2>
                 </div>
-                <p className="text-lg leading-relaxed text-[#929e97] md:text-xl">{chapter.content}</p>
+                <p className="text-[1.15rem] leading-relaxed text-[#6d4a32] md:text-[1.35rem]">{chapter.content}</p>
               </article>
             ))}
           </div>
         </section>
 
         {project.images && project.images.length > 1 ? (
-          <section className="border-y border-[var(--line)] bg-[#0a0d0c] py-24 md:py-32">
+          <section className="border-y border-[rgba(62,26,10,0.08)] bg-[#faf4ee] py-16 md:py-20">
             <div className="section-shell">
               <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
                 <div>
                   <p className="system-label mb-5">Interface archive</p>
-                  <h2 className="text-[clamp(2.8rem,6vw,6rem)] font-medium leading-[0.9] text-[#e9f2ed]">System views.</h2>
+                  <h2 className="text-[clamp(2.8rem,6vw,6rem)] font-semibold leading-[0.9] tracking-[-0.02em] text-[#3e1a0a]">System views.</h2>
                 </div>
-                <p className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[#647069]">Select to inspect</p>
+                <p className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[#8d6b4f]">Select to inspect</p>
               </div>
               <ProjectGallery images={project.images.slice(1)} title={project.title} />
             </div>
           </section>
         ) : null}
 
-        <section className="bg-[#050706] py-24 md:py-32">
-          <div className="section-shell flex flex-col items-start justify-between gap-10 border-y border-[var(--line)] py-12 md:flex-row md:items-center">
+        <section className="bg-[#f7ede0] py-16 md:py-20">
+          <div className="section-shell flex flex-col items-start justify-between gap-10 rounded-[24px] border border-[rgba(62,26,10,0.08)] bg-[#faf4ee] px-6 py-8 md:flex-row md:items-center md:px-10">
             <div>
-              <p className="font-mono text-[0.65rem] uppercase tracking-[0.12em]" style={{ color: project.accent }}>End of case file</p>
-              <h2 className="mt-4 text-3xl font-medium text-[#e9f2ed] md:text-5xl">Explore the next system.</h2>
+              <p className="font-mono text-[0.75rem] uppercase tracking-[0.12em] text-[#b45309]">End of case file</p>
+              <h2 className="mt-4 text-3xl font-semibold text-[#3e1a0a] md:text-5xl">Explore the next work.</h2>
             </div>
-            <Link href="/#work" className="inline-flex min-h-12 items-center gap-2 border border-[var(--line-strong)] px-5 text-sm font-semibold text-[#e9f2ed] transition-colors hover:border-[#9dffb4] hover:text-[#9dffb4]">
+            <Link href="/#work" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#b45309] px-6 text-sm font-semibold text-[#faf4ee] transition-colors hover:bg-[#3e1a0a]">
               Return to work <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>

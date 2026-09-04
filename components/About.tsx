@@ -1,7 +1,10 @@
 'use client';
 
-import React from 'react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
+import evanPortrait from '@/assets/images/evan_portrait.png';
+import leftBranch from '@/assets/images/left_branch.png';
+import { ParallaxSection } from './ParallaxSection';
 
 export const About = () => {
   const stats = [
@@ -12,45 +15,63 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="relative scroll-mt-20 border-y border-[var(--line)] bg-[#0a0d0c] py-24 md:py-36">
-      <div className="section-shell">
-        <div className="grid gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
-          <div>
-            <p className="system-label">Operating profile</p>
-          </div>
+    <section id="about" className="relative scroll-mt-20 border-y border-[rgba(62,26,10,0.08)] bg-[#f7ede0] py-24 md:py-36">
+      <ParallaxSection className="section-shell">
+        <div className="mx-auto grid max-w-[68rem] gap-14 lg:max-w-[60rem] lg:grid-cols-[0.95fr_1.05fr] lg:items-start lg:gap-12 xl:max-w-[64rem] xl:gap-14 2xl:max-w-[68rem] 2xl:gap-16">
+          <motion.div
+            initial={{ opacity: 0, x: -48 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-12%' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative mx-auto w-full max-w-[480px] lg:mx-0"
+          >
+            <p className="system-label mb-5">Atelier · Studio 2026</p>
+            <div className="absolute -left-6 -top-6 hidden h-[120px] w-[120px] opacity-[0.14] lg:block" aria-hidden="true">
+              <Image src={leftBranch} alt="" fill className="object-contain object-left-top" />
+            </div>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[40px] border border-[#b45309]/12 bg-[#faf4ee] shadow-[0_16px_48px_rgba(62,26,10,0.09)]">
+              <Image src={evanPortrait} alt="Evangeline Mmayie portrait" fill sizes="(max-width: 768px) 85vw, 480px" className="object-cover object-top" priority />
+            </div>
+            <p className="mt-4 font-serif text-sm italic leading-relaxed text-[#8d6b4f]">Evangeline Mmayie — Engineering with warmth, shipped with precision.</p>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.12 }}
+            className="w-full lg:pt-[28px]"
           >
-            <h2 className="text-balance text-[clamp(2.5rem,5vw,5.6rem)] font-medium leading-[0.96] text-[#e9f2ed]">
-              Precision in the system. <span className="text-[#66716b]">Momentum in the experience.</span>
+            <h2 className="w-full text-balance text-[clamp(2.4rem,5vw,5.2rem)] font-semibold leading-[0.96] tracking-[-0.02em] text-[#3e1a0a]">
+              Precision in the craft. <span className="font-light italic text-[#b45309]">Warmth in the experience.</span>
             </h2>
-            <div className="mt-10 grid gap-6 text-base leading-relaxed text-[#929e97] md:grid-cols-2 md:text-lg">
-              <p>I build high-performance web and mobile applications with a focus on scalability, maintainability, and business outcomes.</p>
-              <p>From enterprise dashboards to fluid mobile products, I connect strong architecture with interfaces that feel deliberate under pressure.</p>
+            <div className="mt-10 grid w-full gap-6 text-balance text-base leading-[1.7] text-[#6d4a32] md:text-lg">
+              <p className="max-w-[46ch]">I build high-performance web and mobile applications with a focus on scalability, maintainability, and business outcomes.</p>
+              <p className="max-w-[46ch]">From enterprise dashboards to fluid mobile products, I connect strong architecture with interfaces that feel deliberate and welcoming in every season.</p>
+            </div>
+            <div className="mt-8 border-l-2 border-[#b45309]/20 pl-6">
+              <p className="font-serif text-base italic leading-relaxed text-[#8d6b4f]">Craft over haste — systems built to endure, experiences shaped to stay.</p>
             </div>
           </motion.div>
         </div>
 
-        <div className="mt-20 grid grid-cols-2 border-l border-t border-[var(--line)] lg:grid-cols-4">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="min-h-36 border-b border-r border-[var(--line)] p-5 md:min-h-44 md:p-7"
-              >
-              <div className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-[#647069]">Telemetry / 0{i + 1}</div>
-              <div className="mt-8 text-2xl font-medium text-[#e9f2ed] md:text-3xl">{stat.value}</div>
-              <div className="mt-2 text-xs text-[#7f8a84]">{stat.label}</div>
-              </motion.div>
-            ))}
+        <div className="mx-auto mt-20 grid max-w-[68rem] grid-cols-2 gap-4 lg:max-w-[60rem] lg:grid-cols-4 xl:max-w-[64rem] 2xl:max-w-[68rem]">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="min-h-36 rounded-[24px] border border-[rgba(62,26,10,0.06)] bg-[#faf4ee] p-6 md:min-h-44 md:p-7"
+            >
+              <div className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-[#8d6b4f]">— 0{i + 1}</div>
+              <div className="mt-8 font-serif text-3xl font-semibold text-[#b45309] md:text-[2rem]">{stat.value}</div>
+              <div className="mt-2 text-xs leading-relaxed text-[#8d6b4f]">{stat.label}</div>
+            </motion.div>
+          ))}
         </div>
-      </div>
+      </ParallaxSection>
     </section>
   );
 };

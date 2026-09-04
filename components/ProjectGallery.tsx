@@ -50,11 +50,11 @@ export const ProjectGallery = ({ images, title }: { images: GalleryImage[]; titl
               triggerRef.current = event.currentTarget;
               setActiveIndex(index);
             }}
-            className="group relative aspect-[16/9] overflow-hidden border border-[var(--line)] bg-[#0a0d0c] text-left"
+            className="group relative aspect-[16/9] overflow-hidden rounded-[20px] border border-[rgba(62,26,10,0.08)] bg-[#faf4ee] text-left"
             aria-label={`Expand ${title} interface view ${index + 1}`}
           >
             <Image src={image} alt={`${title} interface view ${index + 1}`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.02]" />
-            <span className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center bg-[#050706]/85 text-[#e9f2ed] backdrop-blur-md transition-colors group-hover:bg-[#9dffb4] group-hover:text-[#031008]">
+            <span className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#3e1a0a]/85 text-[#faf4ee] backdrop-blur-md transition-colors group-hover:bg-[#b45309]">
               <Expand className="h-4 w-4" />
             </span>
           </button>
@@ -72,7 +72,7 @@ export const ProjectGallery = ({ images, title }: { images: GalleryImage[]; titl
         onMouseDown={(event) => {
           if (event.target === event.currentTarget) setActiveIndex(null);
         }}
-        className="fixed inset-0 m-0 hidden h-full max-h-none w-full max-w-none items-center justify-center bg-[#020302]/95 p-4 backdrop:bg-[#020302]/95 open:flex md:p-10"
+        className="fixed inset-0 m-0 hidden h-full max-h-none w-full max-w-none items-center justify-center bg-[#1a0e06]/95 p-4 backdrop:bg-[#1a0e06]/95 open:flex md:p-10"
       >
         {activeIndex !== null ? (
           <>
@@ -80,22 +80,22 @@ export const ProjectGallery = ({ images, title }: { images: GalleryImage[]; titl
               <Image src={images[activeIndex]} alt={`${title} expanded interface view ${activeIndex + 1}`} fill sizes="95vw" className="object-contain" priority />
             </div>
 
-            <button ref={closeButtonRef} type="button" onClick={() => setActiveIndex(null)} className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-white/20 bg-black/50 text-white hover:bg-white hover:text-black md:right-8 md:top-8" aria-label="Close image viewer">
+            <button ref={closeButtonRef} type="button" onClick={() => setActiveIndex(null)} className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-[#faf4ee]/20 bg-black/50 text-[#faf4ee] hover:bg-[#faf4ee] hover:text-black md:right-8 md:top-8" aria-label="Close image viewer">
               <X className="h-5 w-5" />
             </button>
 
             {images.length > 1 ? (
               <>
-                <button type="button" onClick={() => setActiveIndex((activeIndex - 1 + images.length) % images.length)} className="absolute bottom-5 left-4 flex h-11 w-11 items-center justify-center border border-white/20 bg-black/50 text-white hover:bg-white hover:text-black md:bottom-auto md:left-8 md:top-1/2 md:-translate-y-1/2" aria-label="Previous image">
+                <button type="button" onClick={() => setActiveIndex((activeIndex - 1 + images.length) % images.length)} className="absolute bottom-5 left-4 flex h-11 w-11 items-center justify-center border border-[#faf4ee]/20 bg-black/50 text-[#faf4ee] hover:bg-[#faf4ee] hover:text-black md:bottom-auto md:left-8 md:top-1/2 md:-translate-y-1/2" aria-label="Previous image">
                   <ChevronLeft className="h-5 w-5" />
                 </button>
-                <button type="button" onClick={() => setActiveIndex((activeIndex + 1) % images.length)} className="absolute bottom-5 right-4 flex h-11 w-11 items-center justify-center border border-white/20 bg-black/50 text-white hover:bg-white hover:text-black md:bottom-auto md:right-8 md:top-1/2 md:-translate-y-1/2" aria-label="Next image">
+                <button type="button" onClick={() => setActiveIndex((activeIndex + 1) % images.length)} className="absolute bottom-5 right-4 flex h-11 w-11 items-center justify-center border border-[#faf4ee]/20 bg-black/50 text-[#faf4ee] hover:bg-[#faf4ee] hover:text-black md:bottom-auto md:right-8 md:top-1/2 md:-translate-y-1/2" aria-label="Next image">
                   <ChevronRight className="h-5 w-5" />
                 </button>
               </>
             ) : null}
 
-            <p className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-white/60">
+            <p className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[#faf4ee]/60">
               {String(activeIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
             </p>
           </>

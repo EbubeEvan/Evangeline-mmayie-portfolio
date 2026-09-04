@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 
 const NAV_ITEMS = ['Work', 'About', 'Services', 'Reviews', 'Skills', 'Contact'];
 
-export const Navigation = () => {
+export const Navigation = ({ isReady = true }: { isReady?: boolean } = {}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -76,11 +76,12 @@ export const Navigation = () => {
     <>
       <motion.header
         initial={{ y: -100 }}
-        animate={{ y: 0 }}
+        animate={{ y: isReady ? 0 : -100 }}
+        transition={isReady ? { duration: 0.75, ease: [0.25, 1, 0.5, 1] } : { duration: 0 }}
         className={cn(
           "fixed inset-x-0 top-0 z-50 border-b transition-all duration-300",
           isScrolled || isMobileMenuOpen
-            ? "border-[var(--line)] bg-[#050706]/88 py-3 backdrop-blur-xl"
+            ? "border-[rgba(62,26,10,0.08)] bg-[#f7ede0]/92 py-3 backdrop-blur-xl"
             : "border-transparent bg-transparent py-5"
         )}
       >
@@ -88,9 +89,9 @@ export const Navigation = () => {
           <Link 
             href="/" 
             onClick={(e) => handleLinkClick(e as any, '/#hero')}
-            className="group flex items-center gap-3 text-sm font-semibold uppercase text-[#e9f2ed]"
+            className="group flex items-center gap-3 text-sm font-bold uppercase text-[#3e1a0a]"
           >
-            <span className="flex h-8 w-8 items-center justify-center border border-[var(--line-strong)] font-mono text-[0.65rem] text-[#9dffb4] transition-colors group-hover:border-[#9dffb4]">EM</span>
+            <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#b45309] font-mono text-[0.65rem] text-[#faf4ee] transition-colors group-hover:bg-[#3e1a0a]">EM</span>
             <span className="hidden sm:block">Evangeline Mmayie</span>
           </Link>
 
@@ -101,10 +102,10 @@ export const Navigation = () => {
                 href={`/#${item.toLowerCase()}`} 
                 onClick={(e) => handleLinkClick(e as any, `/#${item.toLowerCase()}`)}
                 className={cn(
-                  "border border-transparent px-3 py-2 font-mono text-[0.65rem] uppercase tracking-[0.12em] transition-colors",
+                  "rounded-full border px-3 py-2 font-mono text-[0.65rem] font-bold uppercase tracking-[0.12em] transition-colors",
                   activeSection === item.toLowerCase()
-                    ? "border-[var(--line)] text-[#9dffb4]"
-                    : "text-[#7f8a84] hover:text-[#e9f2ed]",
+                    ? "border-[#b45309] bg-[#b45309] text-[#faf4ee]"
+                    : "border-transparent text-[#8d6b4f] hover:text-[#3e1a0a]",
                 )}
               >
                 {item}
@@ -112,7 +113,7 @@ export const Navigation = () => {
             ))}
             <a 
               href="mailto:ebubemmayie@gmail.com"
-              className="ml-3 inline-flex items-center gap-2 bg-[#e9f2ed] px-4 py-2 text-xs font-semibold text-[#050706] transition-colors hover:bg-[#9dffb4]"
+              className="ml-3 inline-flex items-center gap-2 rounded-full bg-[#b45309] px-4 py-2 text-xs font-bold text-[#faf4ee] transition-colors hover:bg-[#3e1a0a]"
             >
               Open channel <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
@@ -120,7 +121,7 @@ export const Navigation = () => {
 
           <button 
             type="button"
-            className="flex h-10 w-10 items-center justify-center border border-[var(--line-strong)] text-[#e9f2ed] lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[rgba(62,26,10,0.15)] bg-[#faf4ee] text-[#3e1a0a] lg:hidden"
             onClick={() => setIsMobileMenuOpen((open) => !open)}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-navigation"
@@ -138,23 +139,22 @@ export const Navigation = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             id="mobile-navigation"
-            className="fixed inset-0 z-40 bg-[#050706] px-4 pb-8 pt-24 lg:hidden"
+            className="fixed inset-0 z-40 bg-[#f7ede0] px-4 pb-8 pt-24 lg:hidden"
           >
-            <div className="command-grid absolute inset-0 opacity-20" aria-hidden="true" />
             <nav className="relative flex h-full flex-col" aria-label="Mobile navigation">
-              <p className="system-label mb-8">Navigation matrix</p>
+              <p className="system-label mb-8">Navigation</p>
               {NAV_ITEMS.map((item, index) => (
                 <Link 
                   key={item} 
                   href={`/#${item.toLowerCase()}`} 
                   onClick={(e) => handleLinkClick(e as any, `/#${item.toLowerCase()}`)}
-                  className="group flex items-center justify-between border-t border-[var(--line)] py-4 text-[clamp(1.8rem,10vw,3.6rem)] font-medium leading-none text-[#e9f2ed]"
+                  className="group flex items-center justify-between border-t border-[rgba(62,26,10,0.08)] py-4 text-[clamp(1.8rem,10vw,3.6rem)] font-semibold leading-none text-[#3e1a0a]"
                 >
                   {item}
-                  <span className="font-mono text-xs text-[#66716b] transition-colors group-hover:text-[#9dffb4]">0{index + 1}</span>
+                  <span className="font-mono text-xs font-bold text-[#8d6b4f] transition-colors group-hover:text-[#b45309]">0{index + 1}</span>
                 </Link>
               ))}
-              <a href="mailto:ebubemmayie@gmail.com" className="mt-auto flex items-center justify-between border-t border-[var(--line)] pt-5 font-mono text-xs uppercase tracking-[0.12em] text-[#9dffb4]">
+              <a href="mailto:ebubemmayie@gmail.com" className="mt-auto flex items-center justify-between border-t border-[rgba(62,26,10,0.08)] pt-5 font-mono text-xs font-bold uppercase tracking-[0.12em] text-[#b45309]">
                 Open project channel <ArrowUpRight className="h-4 w-4" />
               </a>
             </nav>

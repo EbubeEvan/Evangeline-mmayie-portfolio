@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
@@ -6,15 +9,20 @@ import { Services } from "@/components/Services";
 import { Skills } from "@/components/Skills";
 import { Reviews } from "@/components/Reviews";
 import { Contact } from "@/components/Contact";
+import { FallingLeavesScene } from "@/components/FallingLeavesScene";
+import { LoadingScreen } from "@/components/LoadingScreen";
 
 export default function Home() {
+  const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#050706] font-sans text-[#e9f2ed]">
-      <Navigation />
+    <div className="min-h-screen bg-[#f7ede0] font-sans text-[#3e1a0a]">
+      {!loaded && <LoadingScreen onDone={() => setLoaded(true)} />}
+      <FallingLeavesScene />
+      <Navigation isReady={loaded} />
       
       <main>
-        <Hero />
+        <Hero isReady={loaded} />
         <Projects />
         <About />
         <Services />

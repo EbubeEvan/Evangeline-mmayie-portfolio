@@ -7,6 +7,7 @@ import { PROJECTS } from '@/lib/constants';
 import { ProjectCategory } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { ProjectCard } from './ProjectCard';
+import { ParallaxSection } from './ParallaxSection';
 
 const FILTERS: Array<'All' | ProjectCategory> = ['All', 'Web', 'Mobile', 'AI'];
 
@@ -45,12 +46,12 @@ export const Projects = () => {
   };
 
   return (
-    <section id="work" className="relative scroll-mt-20 border-t border-[var(--line)] bg-[#050706]">
-      <div className="section-shell py-20 md:py-28">
-        <div className="grid gap-8 border-b border-[var(--line)] pb-10 lg:grid-cols-[1fr_auto] lg:items-end">
+    <section id="work" className="relative scroll-mt-20 border-t border-[#faf4ee]/20 bg-[#b45309]">
+      <ParallaxSection className="section-shell py-20 md:py-28">
+        <div className="grid gap-8 border-b border-[#faf4ee]/20 pb-10 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
-            <p className="system-label mb-5">Selected transmissions</p>
-            <h2 className="text-balance text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.88] text-[#e9f2ed]">Work in motion.</h2>
+            <p className="system-label system-label--on-orange mb-5">Selected Works</p>
+            <h2 className="text-balance text-[clamp(3rem,7vw,7rem)] font-semibold leading-[0.88] tracking-[-0.02em] text-[#faf4ee]">Work in motion.</h2>
           </div>
           <fieldset className="flex flex-wrap gap-2">
             <legend className="sr-only">Filter projects</legend>
@@ -61,10 +62,10 @@ export const Projects = () => {
                 onClick={() => selectFilter(category)}
                 aria-pressed={filter === category}
                 className={cn(
-                  'min-h-10 border px-4 font-mono text-[0.65rem] uppercase tracking-[0.12em] transition-colors',
+                  'min-h-10 rounded-full border px-4 font-mono text-[0.65rem] uppercase tracking-[0.12em] transition-colors',
                   filter === category
-                    ? 'border-[#9dffb4] bg-[#9dffb4] text-[#031008]'
-                    : 'border-[var(--line-strong)] text-[#8a9690] hover:border-[#9dffb4] hover:text-[#9dffb4]',
+                    ? 'border-[#faf4ee] bg-[#faf4ee] text-[#b45309]'
+                    : 'border-[#faf4ee]/30 text-[#faf4ee]/85 hover:border-[#faf4ee] hover:text-[#faf4ee]',
                 )}
               >
                 {category}
@@ -75,7 +76,7 @@ export const Projects = () => {
 
         <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(22rem,0.9fr)] lg:gap-20">
           <div className="sticky top-28 hidden h-[calc(100vh-9rem)] items-center lg:flex">
-            <div className="group relative w-full max-h-full overflow-hidden border border-[var(--line)] bg-[#0a0d0c]" style={{ aspectRatio: '16 / 9' }}>
+            <div className="group relative w-full max-h-full overflow-hidden rounded-[24px] border border-[#faf4ee]/20 bg-[#faf4ee]/10" style={{ aspectRatio: '16 / 9' }}>
               <AnimatePresence mode="wait">
                 {activeProject?.images?.[0] ? (
                   <motion.div
@@ -87,26 +88,26 @@ export const Projects = () => {
                     className="absolute inset-0"
                   >
                     <Image src={activeProject.images[0]} alt={`${activeProject.title} interface`} fill sizes="55vw" className="object-contain transition-transform duration-700 ease-out group-hover:scale-[1.045]" priority={activeIndex === 0} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#050706]/60 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#3e1a0a]/18 via-transparent to-transparent" />
                   </motion.div>
                 ) : null}
               </AnimatePresence>
               <div className="absolute inset-x-0 bottom-0 z-10 flex items-center justify-between p-5 font-mono text-[0.6rem] uppercase tracking-[0.12em]">
-                <span className="text-[#e9f2ed]">Visual feed / {String(activeIndex + 1).padStart(2, '0')}</span>
-                <span style={{ color: activeProject?.accent }}>Live archive</span>
+                <span className="text-[#faf4ee]">Collection / {String(activeIndex + 1).padStart(2, '0')}</span>
+                <span className="text-[#faf4ee]/80">Autumn archive</span>
               </div>
             </div>
           </div>
 
           <div ref={listRef}>
             {filtered.map((project, index) => (
-              <div key={project.id} data-project-index={index} className="border-b border-[var(--line)] last:border-b-0">
-                <ProjectCard project={project} index={index} active={index === activeIndex} />
+              <div key={project.id} data-project-index={index} className="border-b border-[#faf4ee]/15 last:border-b-0">
+                <ProjectCard project={project} index={index} active={index === activeIndex} variant="orange" />
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </ParallaxSection>
     </section>
   );
 };
