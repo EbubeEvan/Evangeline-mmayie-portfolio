@@ -44,7 +44,7 @@ export const Skills = () => {
         <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:items-end">
           <div>
             <p className="system-label system-label--on-orange mb-5 !text-[#faf4ee] [&::before]:!bg-[#faf4ee] [&::before]:!shadow-[0_0_0.7rem_rgba(250,244,238,0.6)]">Craft & Stack</p>
-            <h2 className="text-[clamp(3rem,7vw,7rem)] font-semibold leading-[0.88] tracking-[-0.02em] text-[#faf4ee]">Tools in hand.</h2>
+            <h2 className="text-[clamp(3rem,7vw,7rem)] font-semibold leading-[0.88] tracking-[-0.02em] text-[#faf4ee]">Tools, selected.</h2>
           </div>
           <p className="max-w-lg text-base leading-relaxed text-[#faf4ee]/85 lg:justify-self-end md:text-lg">A clear, curated stack for resilient interfaces, real-time products, and refined delivery.</p>
         </div>

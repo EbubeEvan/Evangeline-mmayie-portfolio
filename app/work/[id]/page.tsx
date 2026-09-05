@@ -59,7 +59,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
                 <span className="text-[#8d6b4f]">•</span>
                 <span>{categories.join(' + ')}</span>
               </div>
-              <h1 className="text-balance text-[clamp(3.2rem,9vw,8.5rem)] font-semibold leading-[0.88] tracking-[-0.02em] text-[#3e1a0a]">{project.title}</h1>
+              <h1 className="text-balance text-[clamp(3.2rem,9vw,8.5rem)] font-semibold leading-[0.92] tracking-[-0.015em] text-[#3e1a0a]">{project.title}</h1>
               <p className="mt-9 max-w-2xl text-lg leading-relaxed text-[#6d4a32] md:text-[1.35rem]">{project.fullDescription || project.description}</p>
 
               <div className="mt-10 flex flex-wrap gap-3">
@@ -76,11 +76,11 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 border-t border-[rgba(62,26,10,0.08)] pt-5 font-mono text-[0.70rem] uppercase tracking-[0.12em] text-[#8d6b4f] md:grid-cols-4">
-              <span>Collection</span>
-              <span>{categories.join(' / ')}</span>
-              <span className="hidden md:block">Status / Deployed</span>
-              <span className="text-right text-[#b45309]">Case live</span>
+            <div className="grid grid-cols-2 gap-4 border-t border-[rgba(62,26,10,0.08)] pt-5 font-mono text-[0.70rem] uppercase tracking-[0.12em] text-[#8d6b4f] md:grid-cols-4 md:gap-4">
+              <span className="whitespace-nowrap text-center">Collection</span>
+              <span className="whitespace-nowrap text-center">{categories.join(' / ')}</span>
+              <span className="whitespace-nowrap text-center">Status / Deployed</span>
+              <span className="whitespace-nowrap text-center text-[#b45309]">Case live</span>
             </div>
           </div>
         </section>

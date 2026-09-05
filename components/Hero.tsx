@@ -109,12 +109,12 @@ export const Hero = ({ isReady = true }: { isReady?: boolean } = {}) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: isReady ? 1 : 0 }}
           transition={{ delay: isReady ? 1.1 : 0, duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
-          className="mt-16 grid w-full max-w-3xl grid-cols-2 gap-4 border-t border-[rgba(62,26,10,0.08)] pt-5 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-[#8d6b4f] md:grid-cols-4 md:text-xs"
+          className="mt-16 grid w-full grid-cols-2 gap-4 border-t border-[rgba(62,26,10,0.08)] pt-5 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-[#8d6b4f] md:grid-cols-4 md:gap-4 md:text-xs"
         >
-          <span>Portfolio / 01</span>
-          <span>Edition / 01</span>
-          <span className="md:text-center">Scroll to navigate</span>
-          <span className="text-right text-[#b45309]">Live</span>
+          <span className="whitespace-nowrap text-center">Portfolio / 01</span>
+          <span className="whitespace-nowrap text-center">Edition / 01</span>
+          <span className="whitespace-nowrap text-center">Scroll to navigate</span>
+          <span className="whitespace-nowrap text-center text-[#b45309]">Live</span>
         </motion.div>
       </div>
     </section>
