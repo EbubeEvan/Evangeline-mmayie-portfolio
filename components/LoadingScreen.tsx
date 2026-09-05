@@ -194,13 +194,13 @@ export const LoadingScreen = ({ onDone }: { onDone?: () => void }) => {
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#f7ede0] px-6"
         >
           <div className="flex flex-col items-center gap-8">
-            <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[#8d6b4f]">Preparing atelier</p>
+            <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[#8d6b4f]">Preparing</p>
 
             <div ref={mountRef} className="h-[140px] w-[140px] md:h-[160px] md:w-[160px]" aria-hidden="true" />
 
             <div className="flex flex-col items-center gap-3">
               <h1 className="text-center text-[1.7rem] font-semibold tracking-[-0.02em] text-[#3e1a0a]">Evangeline Mmayie</h1>
-              <p className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-[#8d6b4f]">Autumn 2026 · {progress}%</p>
+              <p className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-[#8d6b4f]">{progress}%</p>
               <div className="mt-1 h-[2px] w-[180px] overflow-hidden rounded-full bg-[rgba(62,26,10,0.08)] md:w-[200px]">
                 <motion.div
                   className="h-full bg-[#b45309]"

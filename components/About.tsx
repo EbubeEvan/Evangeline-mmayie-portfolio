@@ -25,7 +25,7 @@ export const About = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="relative mx-auto w-full max-w-[480px] lg:mx-0"
           >
-            <p className="system-label mb-5">Atelier · Studio 2026</p>
+            <p className="system-label mb-5">About</p>
             <div className="absolute -left-6 -top-6 hidden h-[120px] w-[120px] opacity-[0.14] lg:block" aria-hidden="true">
               <Image src={leftBranch} alt="" fill className="object-contain object-left-top" />
             </div>

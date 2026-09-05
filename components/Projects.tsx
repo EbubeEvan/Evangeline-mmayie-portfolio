@@ -94,7 +94,7 @@ export const Projects = () => {
               </AnimatePresence>
               <div className="absolute inset-x-0 bottom-0 z-10 flex items-center justify-between p-5 font-mono text-[0.6rem] uppercase tracking-[0.12em]">
                 <span className="text-[#faf4ee]">Collection / {String(activeIndex + 1).padStart(2, '0')}</span>
-                <span className="text-[#faf4ee]/80">Autumn archive</span>
+                <span className="text-[#faf4ee]/80">Archive</span>
               </div>
             </div>
           </div>

@@ -77,7 +77,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
             </div>
 
             <div className="grid grid-cols-2 gap-4 border-t border-[rgba(62,26,10,0.08)] pt-5 font-mono text-[0.70rem] uppercase tracking-[0.12em] text-[#8d6b4f] md:grid-cols-4">
-              <span>Collection / 2026</span>
+              <span>Collection</span>
               <span>{categories.join(' / ')}</span>
               <span className="hidden md:block">Status / Deployed</span>
               <span className="text-right text-[#b45309]">Case live</span>

@@ -64,7 +64,7 @@ export const Hero = ({ isReady = true }: { isReady?: boolean } = {}) => {
           transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1], delay: isReady ? 0.22 : 0 }}
           className="system-label mb-6"
         >
-          Studio · Available worldwide
+          Independent · Available worldwide
         </motion.p>
 
         <motion.div
@@ -111,10 +111,10 @@ export const Hero = ({ isReady = true }: { isReady?: boolean } = {}) => {
           transition={{ delay: isReady ? 1.1 : 0, duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
           className="mt-16 grid w-full max-w-3xl grid-cols-2 gap-4 border-t border-[rgba(62,26,10,0.08)] pt-5 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-[#8d6b4f] md:grid-cols-4 md:text-xs"
         >
-          <span>Studio / 01</span>
-          <span>Build / 2026.07</span>
+          <span>Portfolio / 01</span>
+          <span>Edition / 01</span>
           <span className="md:text-center">Scroll to navigate</span>
-          <span className="text-right text-[#b45309]">Autumn live</span>
+          <span className="text-right text-[#b45309]">Live</span>
         </motion.div>
       </div>
     </section>

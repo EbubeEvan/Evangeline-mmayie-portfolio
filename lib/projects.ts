@@ -125,7 +125,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '5',
-    title: 'Weyz Rider',
+    title: 'Weyz Rider Mobile App',
     category: ['Mobile'],
     description:
       "Campus transportation shouldn't require cash or queues. Weyz Rider lets students tap to board, pay cashlessly via QR or virtual card, and track their rides — making campus mobility fast and frictionless.",
@@ -147,7 +147,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '6',
-    title: 'Weyz Driver',
+    title: 'Weyz Driver Mobile App',
     category: ['Mobile'],
     description:
       "Managing shift data and passenger tracking shouldn't slow drivers down. Weyz Driver gives drivers real-time navigation, earnings tracking, and commuter management — all in one place.",
