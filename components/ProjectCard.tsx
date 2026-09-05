@@ -23,7 +23,7 @@ export const ProjectCard = ({ project, index, active = false, variant = 'default
           <span className={isOrange ? 'text-[#faf4ee]/75' : 'text-[#8d6b4f]'}>{Array.isArray(project.category) ? project.category.join(' + ') : project.category}</span>
         </div>
 
-        <h3 className={`mt-7 text-balance text-[clamp(2.2rem,5vw,4.8rem)] font-semibold leading-[0.95] transition-colors ${isOrange ? 'text-[#faf4ee] group-hover:text-[#faf4ee]' : 'text-[#3e1a0a] group-hover:text-[#b45309]'}`}>
+        <h3 className={`mt-7 text-balance text-[clamp(2.2rem,5vw,4.8rem)] font-semibold leading-[1.05] tracking-[-0.01em] md:leading-[0.98] transition-colors ${isOrange ? 'text-[#faf4ee] group-hover:text-[#faf4ee]' : 'text-[#3e1a0a] group-hover:text-[#b45309]'}`}>
           {project.title}
         </h3>
         <p className={`mt-6 max-w-xl text-base leading-relaxed md:text-lg ${isOrange ? 'text-[#faf4ee]/85' : 'text-[#6d4a32]'}`}>{project.description}</p>

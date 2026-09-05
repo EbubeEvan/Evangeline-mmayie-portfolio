@@ -59,7 +59,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
                 <span className="text-[#8d6b4f]">•</span>
                 <span>{categories.join(' + ')}</span>
               </div>
-              <h1 className="text-balance text-[clamp(3.2rem,9vw,8.5rem)] font-semibold leading-[0.92] tracking-[-0.015em] text-[#3e1a0a]">{project.title}</h1>
+              <h1 className="text-balance text-[clamp(3.2rem,9vw,8.5rem)] font-semibold leading-[1.05] tracking-[-0.01em] md:leading-[0.98] text-[#3e1a0a]">{project.title}</h1>
               <p className="mt-9 max-w-2xl text-lg leading-relaxed text-[#6d4a32] md:text-[1.35rem]">{project.fullDescription || project.description}</p>
 
               <div className="mt-10 flex flex-wrap gap-3">
