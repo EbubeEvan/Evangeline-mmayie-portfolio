@@ -3,37 +3,61 @@
 import Image from 'next/image';
 import { motion } from 'motion/react';
 import vines from '@/assets/images/vines.jpeg';
+import vinesMobile from '@/assets/images/vines_mobile.jpeg';
 import { SKILLS } from '@/lib/constants';
 import { ParallaxSection } from './ParallaxSection';
 
 const VINES_POS: Array<{ name: string; x: number; y: number }> = [
-  { name: 'HTML', x: 10, y: 24 },
-  { name: 'CSS', x: 7, y: 34 },
-  { name: 'Javascript', x: 16, y: 33 },
-  { name: 'TypeScript', x: 26, y: 23 },
-  { name: 'React', x: 38, y: 48 },
-  { name: 'React Native', x: 17, y: 79 },
-  { name: 'Next.js', x: 58, y: 20 },
-  { name: 'Tailwind', x: 73, y: 38 },
-  { name: 'Framer Motion', x: 32, y: 63 },
-  { name: 'GSAP', x: 22, y: 50 },
-  { name: 'Node.js', x: 57, y: 38 },
-  { name: 'Express', x: 67, y: 32 },
-  { name: 'Tanstack Start', x: 74, y: 14 },
-  { name: 'GraphQL', x: 47, y: 62 },
-  { name: 'PostgreSQL', x: 87, y: 24 },
-  { name: 'MongoDB', x: 88, y: 42 },
-  { name: 'Drizzle', x: 70, y: 70 },
-  { name: 'Firebase', x: 43, y: 72 },
-  { name: 'Supabase', x: 60, y: 84 },
-  { name: 'LangChain', x: 70, y: 92 },
-  { name: 'LlamaIndex', x: 89, y: 52 },
-  { name: 'AI SDK', x: 70, y: 62 },
+  { name: 'HTML', x: 14, y: 28 },
+  { name: 'CSS', x: 10, y: 46 },
+  { name: 'Javascript', x: 28, y: 34 },
+  { name: 'TypeScript', x: 38, y: 20 },
+  { name: 'React', x: 44, y: 52 },
+  { name: 'React Native', x: 20, y: 74 },
+  { name: 'Next.js', x: 62, y: 18 },
+  { name: 'Tailwind', x: 78, y: 38 },
+  { name: 'Framer Motion', x: 32, y: 66 },
+  { name: 'Node.js', x: 60, y: 42 },
+  { name: 'Express', x: 70, y: 28 },
+  { name: 'Tanstack Start', x: 76, y: 14 },
+  { name: 'PostgreSQL', x: 86, y: 30 },
+  { name: 'MongoDB', x: 86, y: 48 },
+  { name: 'Firebase', x: 42, y: 76 },
+  { name: 'Supabase', x: 62, y: 84 },
+  { name: 'LangChain', x: 72, y: 90 },
+  { name: 'AI SDK', x: 68, y: 60 },
+];
+
+const VINES_POS_MOBILE: Array<{ name: string; x: number; y: number }> = [
+  { name: 'HTML', x: 36, y: 12 },
+  { name: 'CSS', x: 68, y: 22 },
+  { name: 'Javascript', x: 38, y: 24 },
+  { name: 'TypeScript', x: 56, y: 15 },
+  { name: 'React', x: 42, y: 30 },
+  { name: 'React Native', x: 74, y: 33 },
+  { name: 'Next.js', x: 30, y: 38 },
+  { name: 'Tailwind', x: 78, y: 42 },
+  { name: 'Framer Motion', x: 30, y: 48 },
+  { name: 'Node.js', x: 58, y: 52 },
+  { name: 'Express', x: 70, y: 58 },
+  { name: 'Tanstack Start', x: 28, y: 62 },
+  { name: 'PostgreSQL', x: 78, y: 68 },
+  { name: 'MongoDB', x: 32, y: 72 },
+  { name: 'Firebase', x: 48, y: 78 },
+  { name: 'Supabase', x: 72, y: 84 },
+  { name: 'LangChain', x: 36, y: 87 },
+  { name: 'AI SDK', x: 58, y: 92 },
 ];
 
 const VINES_SKILLS = SKILLS.map((s, i) => ({
   ...s,
   ...(VINES_POS[i] ?? { x: 50, y: 50 }),
+  name: s.name,
+}));
+
+const VINES_SKILLS_MOBILE = SKILLS.map((s, i) => ({
+  ...s,
+  ...(VINES_POS_MOBILE[i] ?? { x: 50, y: 50 }),
   name: s.name,
 }));
 
@@ -50,7 +74,7 @@ export const Skills = () => {
         </div>
 
         {/* Desktop vines infinity - full bleed, no crop */}
-        <div className="relative hidden w-full overflow-hidden rounded-[32px] border border-[#faf4ee]/20 bg-[#faf4ee] p-2 md:block">
+        <div className="relative hidden w-full overflow-hidden rounded-[32px] border border-[#faf4ee]/20 bg-[#faf4ee] p-2 lg:block">
           <div className="relative aspect-[1408/768] w-full overflow-hidden rounded-[24px]">
             <Image src={vines} alt="" fill priority sizes="100vw" className="object-contain object-center" />
             {VINES_SKILLS.slice(0, SKILLS.length).map((skill, i) => (
@@ -73,23 +97,28 @@ export const Skills = () => {
           </div>
         </div>
 
-        {/* Mobile static grid */}
-        <div className="grid grid-cols-2 gap-3 md:hidden">
-          {SKILLS.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-12% 0px' }}
-              transition={{ delay: index * 0.04, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ scale: 1.04, y: -2, transition: { type: 'spring', stiffness: 400, damping: 12 } }}
-              whileTap={{ scale: 0.98 }}
-              className="cursor-pointer rounded-[16px] border border-[#faf4ee]/15 bg-[#faf4ee]/10 p-4 backdrop-blur-sm"
-            >
-              <span className="font-mono text-[0.55rem] text-[#faf4ee]/70">{String(index + 1).padStart(2, '0')}</span>
-              <p className="mt-3 text-sm font-medium text-[#faf4ee]">{skill.name}</p>
-            </motion.div>
-          ))}
+        {/* Mobile + Tablet portrait vines — hand-tuned < lg */}
+        <div className="relative w-full overflow-hidden rounded-[32px] border border-[#faf4ee]/20 bg-[#faf4ee] p-2 lg:hidden">
+          <div className="relative aspect-[768/1376] w-full overflow-hidden rounded-[24px]">
+            <Image src={vinesMobile} alt="" fill priority={false} sizes="100vw" className="object-contain object-center" />
+            {VINES_SKILLS_MOBILE.slice(0, SKILLS.length).map((skill, i) => (
+              <motion.div
+                key={`${skill.name}-${i}`}
+                className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                style={{ left: `${skill.x}%`, top: `${skill.y}%` }}
+                initial={{ opacity: 0, scale: 0.7, y: 8 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: '-10%' }}
+                transition={{ delay: i * 0.08, duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ scale: 1.08, y: -4, zIndex: 20, transition: { type: 'spring', stiffness: 400, damping: 12 } }}
+                whileTap={{ scale: 0.96 }}
+              >
+              <span className="cursor-pointer whitespace-nowrap rounded-full border-2 border-[#7a4a2b]/45 bg-[#faf4ee] px-3 py-1.5 font-serif text-xs font-bold tracking-[0.02em] text-[#3e1a0a] shadow-[0_4px_14px_rgba(62,26,10,0.18)] transition-colors hover:border-[#b45309] hover:text-[#b45309] sm:px-4 sm:py-2 sm:text-sm">
+                {skill.name}
+              </span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </ParallaxSection>
     </section>
