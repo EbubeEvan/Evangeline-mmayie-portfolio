@@ -53,7 +53,7 @@ export const ProjectGallery = ({ images, title }: { images: GalleryImage[]; titl
             className="group relative aspect-[16/9] overflow-hidden rounded-[20px] border border-[rgba(62,26,10,0.08)] bg-[#faf4ee] text-left"
             aria-label={`Expand ${title} interface view ${index + 1}`}
           >
-            <Image src={image} alt={`${title} interface view ${index + 1}`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.02]" />
+            <Image src={image} alt={`${title} interface view ${index + 1}`} fill sizes="(max-width: 768px) 100vw, 50vw" placeholder="blur" className="object-cover transition-transform duration-700 group-hover:scale-[1.02]" />
             <span className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#3e1a0a]/85 text-[#faf4ee] backdrop-blur-md transition-colors group-hover:bg-[#b45309]">
               <Expand className="h-4 w-4" />
             </span>
@@ -77,7 +77,7 @@ export const ProjectGallery = ({ images, title }: { images: GalleryImage[]; titl
         {activeIndex !== null ? (
           <>
             <div className="relative h-[min(82vh,56rem)] w-full max-w-7xl">
-              <Image src={images[activeIndex]} alt={`${title} expanded interface view ${activeIndex + 1}`} fill sizes="95vw" className="object-contain" priority />
+              <Image src={images[activeIndex]} alt={`${title} expanded interface view ${activeIndex + 1}`} fill sizes="95vw" placeholder="blur" className="object-contain" priority />
             </div>
 
             <button ref={closeButtonRef} type="button" onClick={() => setActiveIndex(null)} className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-[#faf4ee]/20 bg-black/50 text-[#faf4ee] hover:bg-[#faf4ee] hover:text-black md:right-8 md:top-8" aria-label="Close image viewer">

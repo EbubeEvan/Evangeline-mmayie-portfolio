@@ -1,36 +1,36 @@
 import { Project } from './types';
 
-import aiMain from '@/assets/projects/ai-expert-system/main.png';
-import aiDiagram from '@/assets/projects/ai-expert-system/diagram.png';
-import aiToolCall from '@/assets/projects/ai-expert-system/tool-call.png';
+import aiMain from '@/assets/projects/ai-expert-system/main.webp';
+import aiDiagram from '@/assets/projects/ai-expert-system/diagram.webp';
+import aiToolCall from '@/assets/projects/ai-expert-system/tool-call.webp';
 
-import beautyMain from '@/assets/projects/beauty-care-ai/main.png';
-import beautyChatDark from '@/assets/projects/beauty-care-ai/chat-dark.png';
-import beautyChatLight from '@/assets/projects/beauty-care-ai/chat-light.png';
+import beautyMain from '@/assets/projects/beauty-care-ai/main.webp';
+import beautyChatDark from '@/assets/projects/beauty-care-ai/chat-dark.webp';
+import beautyChatLight from '@/assets/projects/beauty-care-ai/chat-light.webp';
 
-import voltxMain from '@/assets/projects/voltx/main.png';
-import voltxDetails from '@/assets/projects/voltx/details.png';
-import voltxProducts from '@/assets/projects/voltx/products.png';
+import voltxMain from '@/assets/projects/voltx/main.webp';
+import voltxDetails from '@/assets/projects/voltx/details.webp';
+import voltxProducts from '@/assets/projects/voltx/products.webp';
 
-import laferlaSiteMain from '@/assets/projects/laferla-website/main.png';
-import laferlaSiteAbout from '@/assets/projects/laferla-website/about.png';
-import laferlaSiteTravel from '@/assets/projects/laferla-website/travel.png';
+import laferlaSiteMain from '@/assets/projects/laferla-website/main.webp';
+import laferlaSiteAbout from '@/assets/projects/laferla-website/about.webp';
+import laferlaSiteTravel from '@/assets/projects/laferla-website/travel.webp';
 
-import laferlaMobileMain from '@/assets/projects/laferla-mobile-app/main.png';
-import laferlaMobileHand from '@/assets/projects/laferla-mobile-app/hand-held.png';
-import laferlaMobilePowerful from '@/assets/projects/laferla-mobile-app/powerful-app.png';
+import laferlaMobileMain from '@/assets/projects/laferla-mobile-app/main.webp';
+import laferlaMobileHand from '@/assets/projects/laferla-mobile-app/hand-held.webp';
+import laferlaMobilePowerful from '@/assets/projects/laferla-mobile-app/powerful-app.webp';
 
-import laferlaWebMain from '@/assets/projects/laferla-web-app/main.png';
-import laferlaWebBuy from '@/assets/projects/laferla-web-app/buy-insurance.png';
-import laferlaWebProfile from '@/assets/projects/laferla-web-app/profile.png';
+import laferlaWebMain from '@/assets/projects/laferla-web-app/main.webp';
+import laferlaWebBuy from '@/assets/projects/laferla-web-app/buy-insurance.webp';
+import laferlaWebProfile from '@/assets/projects/laferla-web-app/profile.webp';
 
-import weyzRiderMain from '@/assets/projects/weyz-rider/main.png';
-import weyzRiderHome from '@/assets/projects/weyz-rider/home.png';
-import weyzRiderCard from '@/assets/projects/weyz-rider/card-payment.jpeg';
+import weyzRiderMain from '@/assets/projects/weyz-rider/main.webp';
+import weyzRiderHome from '@/assets/projects/weyz-rider/home.webp';
+import weyzRiderCard from '@/assets/projects/weyz-rider/card-payment.webp';
 
-import weyzDriverMain from '@/assets/projects/weyz-driver/main.png';
-import weyzDriverNav from '@/assets/projects/weyz-driver/navigation.jpeg';
-import weyzDriverShift from '@/assets/projects/weyz-driver/shift-summary.jpeg';
+import weyzDriverMain from '@/assets/projects/weyz-driver/main.webp';
+import weyzDriverNav from '@/assets/projects/weyz-driver/navigation.webp';
+import weyzDriverShift from '@/assets/projects/weyz-driver/shift-summary.webp';
 
 export const PROJECTS: Project[] = [
   {

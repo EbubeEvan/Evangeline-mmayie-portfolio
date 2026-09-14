@@ -77,7 +77,7 @@ export const Projects = () => {
         <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(22rem,0.9fr)] lg:gap-20">
           <div className="sticky top-28 hidden h-[calc(100vh-9rem)] items-center lg:flex">
             <div className="group relative w-full max-h-full overflow-hidden rounded-[24px] border border-[#faf4ee]/20 bg-[#faf4ee]/10" style={{ aspectRatio: '16 / 9' }}>
-              <AnimatePresence mode="wait">
+              <AnimatePresence>
                 {activeProject?.images?.[0] ? (
                   <motion.div
                     key={activeProject.id}
@@ -87,7 +87,7 @@ export const Projects = () => {
                     transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                     className="absolute inset-0"
                   >
-                    <Image src={activeProject.images[0]} alt={`${activeProject.title} interface`} fill sizes="55vw" className="object-contain transition-transform duration-700 ease-out group-hover:scale-[1.045]" priority={activeIndex === 0} />
+                    <Image src={activeProject.images[0]} alt={`${activeProject.title} interface`} fill sizes="55vw" placeholder="blur" className="object-contain transition-transform duration-700 ease-out group-hover:scale-[1.045]" priority={activeIndex === 0} />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#3e1a0a]/18 via-transparent to-transparent" />
                   </motion.div>
                 ) : null}

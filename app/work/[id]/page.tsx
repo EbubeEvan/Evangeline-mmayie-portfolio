@@ -43,7 +43,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
       <main>
         <section className="relative min-h-[86svh] overflow-hidden border-b border-[rgba(62,26,10,0.08)]">
           {project.images?.[0] ? (
-            <Image src={project.images[0]} alt={`${project.title} product interface`} fill priority sizes="100vw" className="object-cover" />
+            <Image src={project.images[0]} alt={`${project.title} product interface`} fill priority placeholder="blur" sizes="100vw" className="object-cover" />
           ) : null}
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,244,238,0.96)_0%,rgba(250,244,238,0.86)_42%,rgba(250,244,238,0.18)_100%)]" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#f7ede0] via-transparent to-[#faf4ee]/40" />
