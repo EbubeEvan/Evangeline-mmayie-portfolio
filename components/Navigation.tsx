@@ -113,9 +113,9 @@ export const Navigation = ({ isReady = true }: { isReady?: boolean } = {}) => {
             ))}
             <a 
               href="mailto:ebubemmayie@gmail.com"
-              className="ml-3 inline-flex items-center gap-2 rounded-full bg-[#b45309] px-4 py-2 text-xs font-bold text-[#faf4ee] transition-colors hover:bg-[#3e1a0a]"
+              className="group ml-3 inline-flex items-center gap-2 rounded-full bg-[#b45309] px-4 py-2 text-xs font-bold text-[#faf4ee] transition-colors hover:bg-[#3e1a0a]"
             >
-              Open channel <ArrowUpRight className="h-3.5 w-3.5" />
+              Open channel <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
           </nav>
 
@@ -154,8 +154,8 @@ export const Navigation = ({ isReady = true }: { isReady?: boolean } = {}) => {
                   <span className="font-mono text-xs font-bold text-[#8d6b4f] transition-colors group-hover:text-[#b45309]">0{index + 1}</span>
                 </Link>
               ))}
-              <a href="mailto:ebubemmayie@gmail.com" className="mt-auto flex items-center justify-between border-t border-[rgba(62,26,10,0.08)] pt-5 font-mono text-xs font-bold uppercase tracking-[0.12em] text-[#b45309]">
-                Open project channel <ArrowUpRight className="h-4 w-4" />
+              <a href="mailto:ebubemmayie@gmail.com" className="group mt-auto flex items-center justify-between border-t border-[rgba(62,26,10,0.08)] pt-5 font-mono text-xs font-bold uppercase tracking-[0.12em] text-[#b45309]">
+                Open project channel <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
             </nav>
           </motion.div>
