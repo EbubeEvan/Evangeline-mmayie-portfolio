@@ -15,7 +15,7 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="relative scroll-mt-20 border-y border-[rgba(62,26,10,0.08)] bg-[#f7ede0] py-24 md:py-36">
+    <section id="about" className="relative scroll-mt-20 overflow-x-clip border-y border-[rgba(62,26,10,0.08)] bg-[#f7ede0] py-24 md:py-36">
       <ParallaxSection className="section-shell">
         <div className="mx-auto grid max-w-[68rem] gap-14 lg:max-w-[60rem] lg:grid-cols-[0.95fr_1.05fr] lg:items-start lg:gap-12 xl:max-w-[64rem] xl:gap-14 2xl:max-w-[68rem] 2xl:gap-16">
           <motion.div
@@ -55,7 +55,7 @@ export const About = () => {
           </motion.div>
         </div>
 
-        <div className="mx-auto mt-20 grid max-w-[68rem] grid-cols-2 gap-4 lg:max-w-[60rem] lg:grid-cols-4 xl:max-w-[64rem] 2xl:max-w-[68rem]">
+        <div className="mx-auto mt-20 grid w-full min-w-0 max-w-[68rem] grid-cols-2 gap-3 sm:gap-4 lg:max-w-[60rem] lg:grid-cols-4 xl:max-w-[64rem] 2xl:max-w-[68rem]">
           {stats.map((stat, i) => {
             const isLong = stat.value.includes('/');
             return (
@@ -65,13 +65,13 @@ export const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="flex min-h-36 flex-col rounded-[24px] border border-[rgba(62,26,10,0.06)] bg-[#faf4ee] p-6 md:min-h-44 md:p-7"
+              className="flex min-h-36 min-w-0 flex-col overflow-hidden rounded-[24px] border border-[rgba(62,26,10,0.06)] bg-[#faf4ee] p-5 sm:p-6 md:min-h-44 md:p-7"
             >
               <div className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-[#8d6b4f]">— 0{i + 1}</div>
-              <div className="mt-6 flex min-h-[2.2rem] items-center md:mt-8 md:min-h-[2.5rem]">
-                <div className={`font-serif font-semibold leading-none tracking-tight text-[#b45309] ${isLong ? 'whitespace-nowrap text-[1.25rem] sm:text-[1.4rem] md:text-[1.25rem] lg:text-[1.15rem] xl:text-[1.35rem]' : 'text-3xl md:text-[2rem]'}`}>{stat.value}</div>
+              <div className="mt-6 flex min-h-[2.2rem] w-full min-w-0 items-center md:mt-8 md:min-h-[2.5rem]">
+                <div className={`min-w-0 max-w-full font-serif font-semibold leading-none tracking-tight text-[#b45309] ${isLong ? 'text-balance break-words text-[1.15rem] leading-[1.1] sm:text-[1.4rem] md:text-[1.25rem] lg:text-[1.15rem] xl:text-[1.35rem]' : 'text-3xl md:text-[2rem]'}`}>{stat.value}</div>
               </div>
-              <div className="mt-2 text-xs leading-relaxed text-[#8d6b4f]">{stat.label}</div>
+              <div className="mt-2 min-w-0 break-words text-xs leading-relaxed text-[#8d6b4f]">{stat.label}</div>
             </motion.div>
             );
           })}

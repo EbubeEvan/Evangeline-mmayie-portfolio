@@ -7,7 +7,7 @@ import { ParallaxSection } from './ParallaxSection';
 
 export const Reviews = () => {
   return (
-    <section id="reviews" className="scroll-mt-20 border-y border-[rgba(62,26,10,0.08)] bg-[#f7ede0] py-24 md:py-36">
+    <section id="reviews" className="scroll-mt-20 overflow-x-clip border-y border-[rgba(62,26,10,0.08)] bg-[#f7ede0] py-24 md:py-36">
       <ParallaxSection className="section-shell">
         <div className="mb-16 grid gap-8 lg:grid-cols-2 lg:items-end">
           <div>
@@ -44,7 +44,7 @@ export const Reviews = () => {
                   </div>
                 </div>
 
-                <blockquote className="text-balance text-xl leading-relaxed text-[#3e1a0a] md:text-2xl lg:text-[1.85rem] lg:leading-[1.45]">
+                <blockquote className="min-w-0 text-balance break-words text-xl leading-relaxed text-[#3e1a0a] md:text-2xl lg:text-[1.85rem] lg:leading-[1.45]">
                   “{review.content}”
                 </blockquote>
               </motion.div>

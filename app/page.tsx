@@ -16,7 +16,7 @@ export default function Home() {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#f7ede0] font-sans text-[#3e1a0a]">
+    <div className="min-h-screen w-full max-w-full overflow-x-clip bg-[#f7ede0] font-sans text-[#3e1a0a]">
       {!loaded && <LoadingScreen onDone={() => setLoaded(true)} />}
       <FallingLeavesScene />
       <Navigation isReady={loaded} />

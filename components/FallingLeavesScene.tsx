@@ -20,14 +20,14 @@ type LeafState = {
 const LEAF_COUNT_DESKTOP = 14;
 const LEAF_COUNT_MOBILE = 7;
 
-const createLeaves = (count: number): LeafState[] => {
+const createLeaves = (count: number, spread = 14): LeafState[] => {
   return Array.from({ length: count }, (_, i) => {
     const r1 = Math.sin(i * 12.9898 + 78.233) * 43758.5453;
     const r2 = Math.sin(i * 34.123 + 12.7) * 43758.5453;
     const r3 = Math.sin(i * 56.78 + 34.12) * 43758.5453;
     const f = (n: number) => n - Math.floor(n);
     return {
-      x: (f(r1) - 0.5) * 14,
+      x: (f(r1) - 0.5) * spread,
       y: f(r2) * 18 - 2,
       z: (f(r3) - 0.5) * 4 - 1.5,
       speed: 0.35 + f(r1 + 1) * 0.55,
@@ -52,6 +52,7 @@ export const FallingLeavesScene = () => {
 
     const isMobile = window.innerWidth < 768;
     const leafCount = isMobile ? LEAF_COUNT_MOBILE : LEAF_COUNT_DESKTOP;
+    const leafSpread = isMobile ? 12 : 14;
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
@@ -64,6 +65,10 @@ export const FallingLeavesScene = () => {
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.0;
+    renderer.domElement.style.display = 'block';
+    renderer.domElement.style.width = '100%';
+    renderer.domElement.style.height = '100%';
+    renderer.domElement.style.maxWidth = 'none';
     mount.appendChild(renderer.domElement);
 
     const ambient = new THREE.AmbientLight(0xfff6f0, 1.2);
@@ -75,7 +80,7 @@ export const FallingLeavesScene = () => {
     warm.position.set(-4, -2, 3);
     scene.add(warm);
 
-    const leaves = createLeaves(leafCount);
+    const leaves = createLeaves(leafCount, leafSpread);
     let instanced: THREE.InstancedMesh | null = null;
     let dummyMat: THREE.Material | null = null;
 
@@ -87,13 +92,14 @@ export const FallingLeavesScene = () => {
     const leafUrl = '/models/red-leaf.glb';
 
     const resize = () => {
-      const w = mount.clientWidth || window.innerWidth;
-      const h = mount.clientHeight || window.innerHeight;
-      const vW = (h * camera.aspect) ? w : w;
-      // camera aspect based on full viewport
-      camera.aspect = (w || window.innerWidth) / (h || window.innerHeight);
+      const w = window.visualViewport?.width ?? window.innerWidth;
+      const h = window.visualViewport?.height ?? window.innerHeight;
+      // camera aspect based on full viewport for edge-to-edge bleed
+      camera.aspect = w / h;
       camera.updateProjectionMatrix();
-      renderer.setSize(w || window.innerWidth, h || window.innerHeight);
+      renderer.setSize(w, h, false);
+      renderer.domElement.style.width = `${w}px`;
+      renderer.domElement.style.height = `${h}px`;
     };
 
     const animate = () => {
@@ -105,7 +111,7 @@ export const FallingLeavesScene = () => {
           leaf.y -= leaf.speed * 0.016;
           if (leaf.y < -8) {
             leaf.y = 9 + Math.random() * 2;
-            leaf.x = (Math.random() - 0.5) * 14;
+            leaf.x = (Math.random() - 0.5) * leafSpread;
           }
           const dx = Math.sin(t * leaf.driftFreq + leaf.offset) * leaf.drift;
           dummy.position.set(leaf.x + dx, leaf.y, leaf.z);
@@ -183,6 +189,8 @@ export const FallingLeavesScene = () => {
     // keep GLB as primary via loader above
 
     window.addEventListener('resize', resize);
+    window.addEventListener('orientationchange', resize);
+    window.visualViewport?.addEventListener('resize', resize);
     document.addEventListener('visibilitychange', handleVisibility);
     resize();
 
@@ -190,6 +198,8 @@ export const FallingLeavesScene = () => {
       disposed = true;
       cancelAnimationFrame(frame);
       window.removeEventListener('resize', resize);
+      window.removeEventListener('orientationchange', resize);
+      window.visualViewport?.removeEventListener('resize', resize);
       document.removeEventListener('visibilitychange', handleVisibility);
       if (instanced) {
         instanced.geometry.dispose();
@@ -202,6 +212,6 @@ export const FallingLeavesScene = () => {
   }, []);
 
   return (
-    <div ref={mountRef} aria-hidden="true" className={`pointer-events-none fixed inset-0 z-10 overflow-hidden ${active ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`} style={{ height: '100vh', width: '100vw' }} />
+    <div ref={mountRef} aria-hidden="true" className={`pointer-events-none fixed left-0 top-0 z-10 overflow-hidden ${active ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`} style={{ width: '100dvw', height: '100dvh', maxWidth: 'none', margin: 0, padding: 0 }} />
   );
 };

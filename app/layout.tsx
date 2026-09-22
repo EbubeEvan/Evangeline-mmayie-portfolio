@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cormorantGaramond.variable} ${ibmPlexMono.variable} antialiased overflow-x-hidden`}
+        className={`${cormorantGaramond.variable} ${ibmPlexMono.variable} max-w-full antialiased overflow-x-clip`}
       >
         <JsonLd />
         {children}
