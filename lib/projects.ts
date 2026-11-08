@@ -228,7 +228,7 @@ export const PROJECTS: Project[] = [
     accent: '#b45309',
     previewBg: '#3e1a0a',
     featured: true,
-    previewUrl: '',
+    previewUrl: 'https://replai-app.onrender.com/',
     gitUrl: '',
     challenge:
       'Creating an assistant that could talk to real customers on a business owner’s behalf — answering accurately, knowing what’s in stock, and handing over to the owner when a human touch was needed.',
