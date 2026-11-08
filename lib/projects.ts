@@ -32,6 +32,10 @@ import weyzDriverMain from '@/assets/projects/weyz-driver/main.webp';
 import weyzDriverNav from '@/assets/projects/weyz-driver/navigation.webp';
 import weyzDriverShift from '@/assets/projects/weyz-driver/shift-summary.webp';
 
+import replaiMain from '@/assets/projects/replai/main.webp';
+import replaiTraining from '@/assets/projects/replai/training.webp';
+import replaiDashboard from '@/assets/projects/replai/dashboard.webp';
+
 export const PROJECTS: Project[] = [
   {
     id: '1',
@@ -211,5 +215,28 @@ export const PROJECTS: Project[] = [
     fullDescription:
       'BeautyCare AI is a multimodal beauty consultation tool powered by AI. It analyses images, text, and voice input to understand a user\'s unique skin profile and deliver tailored advice through text or voice output — available on demand.',
     images: [beautyMain, beautyChatDark, beautyChatLight],
+  },
+  {
+    id: '9',
+    title: 'Replai',
+    category: ['Web', 'AI'],
+    description:
+      "Small businesses lose sales when DMs go unanswered. Replai is an AI assistant that replies to customers on Instagram, WhatsApp, and Messenger 24/7, so no enquiry slips through the cracks.",
+    tech: ['Next.js', 'TypeScript', 'Node.js', 'Gemini', 'PostgreSQL', 'Paystack'],
+    metrics: 'AI-powered replies • Instagram, WhatsApp & Messenger',
+    color: 'from-emerald-500 to-teal-500',
+    accent: '#b45309',
+    featured: true,
+    previewUrl: '',
+    gitUrl: '',
+    challenge:
+      'Creating an assistant that could talk to real customers on a business owner’s behalf — answering accurately, knowing what’s in stock, and handing over to the owner when a human touch was needed.',
+    solution:
+      'Built an AI agent trained on each business’s products and FAQs, with a simple command channel that lets owners record sales, restock items, and send receipts just by sending a message.',
+    outcome:
+      'Delivered an always-on sales assistant that responds to customers instantly and lets owners run their day-to-day operations from a single chat.',
+    fullDescription:
+      'Replai helps small businesses that sell through social media keep up with their customers. It answers questions, checks stock, and flags conversations that need the owner’s attention — while giving owners an easy way to track sales and manage inventory from their phone.',
+    images: [replaiMain, replaiTraining, replaiDashboard],
   },
 ];
