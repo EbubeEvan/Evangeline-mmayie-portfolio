@@ -222,7 +222,7 @@ export const PROJECTS: Project[] = [
     category: ['Web', 'AI'],
     description:
       "Small businesses lose sales when DMs go unanswered. Replai is an AI assistant that replies to customers on Instagram, WhatsApp, and Messenger 24/7, so no enquiry slips through the cracks.",
-    tech: ['Next.js', 'TypeScript', 'Node.js', 'Gemini', 'PostgreSQL', 'Paystack'],
+    tech: ['Next.js', 'TypeScript', 'Node.js', 'Gemini', 'Langchain', 'PostgreSQL', 'Paystack'],
     metrics: 'AI-powered replies • Instagram, WhatsApp & Messenger',
     color: 'from-emerald-500 to-teal-500',
     accent: '#b45309',
