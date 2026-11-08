@@ -226,6 +226,7 @@ export const PROJECTS: Project[] = [
     metrics: 'AI-powered replies • Instagram, WhatsApp & Messenger',
     color: 'from-emerald-500 to-teal-500',
     accent: '#b45309',
+    previewBg: '#3e1a0a',
     featured: true,
     previewUrl: '',
     gitUrl: '',

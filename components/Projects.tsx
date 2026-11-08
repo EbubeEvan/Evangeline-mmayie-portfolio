@@ -76,7 +76,7 @@ export const Projects = () => {
 
         <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(22rem,0.9fr)] lg:gap-20">
           <div className="sticky top-28 hidden h-[calc(100vh-9rem)] items-center lg:flex">
-            <div className="group relative w-full max-h-full overflow-hidden rounded-[24px] border border-[#faf4ee]/20 bg-[#faf4ee]/10" style={{ aspectRatio: '16 / 9' }}>
+            <div className="group relative w-full max-h-full overflow-hidden rounded-[24px] border border-[#faf4ee]/20 bg-[#faf4ee]/10" style={{ aspectRatio: '16 / 9', backgroundColor: activeProject?.previewBg }}>
               <AnimatePresence>
                 {activeProject?.images?.[0] ? (
                   <motion.div

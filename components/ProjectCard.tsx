@@ -13,7 +13,7 @@ export const ProjectCard = ({ project, index, active = false, variant = 'default
     <Link href={`/work/${project.id}`} className="group block py-14 md:py-24">
       <motion.article animate={{ opacity: active ? 1 : isOrange ? 0.88 : 0.46 }} transition={{ duration: 0.35 }}>
         {project.images?.[0] ? (
-          <div className={`relative mb-8 aspect-[16/9] overflow-hidden rounded-[20px] border lg:hidden ${isOrange ? 'border-[#faf4ee]/20 bg-[#faf4ee]/10' : 'border-[rgba(62,26,10,0.08)] bg-[#faf4ee]'}`}>
+          <div className={`relative mb-8 aspect-[16/9] overflow-hidden rounded-[20px] border lg:hidden ${isOrange ? 'border-[#faf4ee]/20 bg-[#faf4ee]/10' : 'border-[rgba(62,26,10,0.08)] bg-[#faf4ee]'}`} style={{ backgroundColor: project.previewBg }}>
             <Image src={project.images[0]} alt={`${project.title} interface`} fill sizes="100vw" placeholder="blur" className="object-contain" />
           </div>
         ) : null}

@@ -20,6 +20,8 @@ export interface Project {
   previewUrl?: string;
   gitUrl?: string;
   images?: (string | StaticImageData)[];
+  // Background colour of the preview frame in the projects list
+  previewBg?: string;
 }
 
 export interface Service {
