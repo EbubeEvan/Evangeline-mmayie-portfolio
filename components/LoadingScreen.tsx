@@ -7,7 +7,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 export const LoadingScreen = ({ onDone }: { onDone?: () => void }) => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(1);
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -200,7 +200,7 @@ export const LoadingScreen = ({ onDone }: { onDone?: () => void }) => {
 
             <div className="flex flex-col items-center gap-3">
               <h1 className="text-center text-[1.7rem] font-semibold tracking-[-0.02em] text-[#3e1a0a]">Evangeline Mmayie</h1>
-              <p className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-[#8d6b4f]">{progress}%</p>
+              <p className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-[#8d6b4f]">{Math.max(1, Math.round(progress))}%</p>
               <div className="mt-1 h-[2px] w-[180px] overflow-hidden rounded-full bg-[rgba(62,26,10,0.08)] md:w-[200px]">
                 <motion.div
                   className="h-full bg-[#b45309]"
